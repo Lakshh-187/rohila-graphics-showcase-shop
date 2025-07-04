@@ -1,5 +1,7 @@
-
 import { ImageServiceCard } from "./ImageServiceCard";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
 
 const allServices = [
   // Flex Printing Services
