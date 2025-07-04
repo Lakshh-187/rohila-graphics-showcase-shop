@@ -1,6 +1,7 @@
 
 import { Hero } from "@/components/Hero";
 import { ServicesGrid } from "@/components/ServicesGrid";
+import { BulkQuantity } from "@/components/BulkQuantity";
 import { MediaCarousel } from "@/components/MediaCarousel";
 import { ContactSection } from "@/components/ContactSection";
 import { FloatingSocials } from "@/components/FloatingSocials";
@@ -11,6 +12,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       <Hero />
       <ServicesGrid />
+      <BulkQuantity />
       <MediaCarousel />
       <ContactSection />
       <FloatingSocials />
