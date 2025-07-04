@@ -119,16 +119,18 @@ export const MediaCarousel = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes reverse-spin {
-          from {
-            transform: rotate(0deg);
+      <style>
+        {`
+          @keyframes reverse-spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(-360deg);
+            }
           }
-          to {
-            transform: rotate(-360deg);
-          }
-        }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };
