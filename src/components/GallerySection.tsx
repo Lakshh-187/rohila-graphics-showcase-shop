@@ -7,21 +7,21 @@ import { Badge } from "@/components/ui/badge";
 export const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Business Cards", "Banners", "Brochures", "Wedding", "Digital"];
+  const categories = ["All", "Printing Equipment", "Design Studio", "Digital Prints", "Banners", "Business Cards"];
 
   const galleryItems = [
-    { id: 1, category: "Business Cards", image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=400&h=300&fit=crop", title: "Modern Business Cards" },
-    { id: 2, category: "Banners", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop", title: "Event Banners" },
-    { id: 3, category: "Brochures", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop", title: "Corporate Brochures" },
-    { id: 4, category: "Wedding", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop", title: "Wedding Invitations" },
-    { id: 5, category: "Digital", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop", title: "Digital Prints" },
-    { id: 6, category: "Business Cards", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop", title: "Professional Cards" },
-    { id: 7, category: "Banners", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop", title: "Promotional Banners" },
-    { id: 8, category: "Brochures", image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop", title: "Product Catalogs" },
-    { id: 9, category: "Wedding", image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=300&fit=crop", title: "Save the Date" },
-    { id: 10, category: "Digital", image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop", title: "Large Format" },
-    { id: 11, category: "Business Cards", image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop", title: "Creative Designs" },
-    { id: 12, category: "Banners", image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop", title: "Store Banners" }
+    { id: 1, category: "Printing Equipment", image: "/lovable-uploads/01c42ca6-fdb7-4e02-b3a7-3e1ed9d8a233.png", title: "Large Format Printing Machine" },
+    { id: 2, category: "Design Studio", image: "/lovable-uploads/c528929b-f4c6-4679-8642-30d2dc35080a.png", title: "Creative Design Workspace" },
+    { id: 3, category: "Digital Prints", image: "/lovable-uploads/3aa23568-9de2-4000-a7aa-994869878045.png", title: "High Quality Digital Prints" },
+    { id: 4, category: "Printing Equipment", image: "/lovable-uploads/4ca38484-ba19-47b8-938b-4f26ca1eec3a.png", title: "Professional Printing Setup" },
+    { id: 5, category: "Design Studio", image: "/lovable-uploads/78ac59f3-3c1e-4e96-8da3-e5efea679825.png", title: "Modern Design Studio" },
+    { id: 6, category: "Banners", image: "/lovable-uploads/0da165e7-bfe5-42e4-89de-4a5c597feece.png", title: "Custom Banner Solutions" },
+    { id: 7, category: "Business Cards", image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=400&h=300&fit=crop", title: "Modern Business Cards" },
+    { id: 8, category: "Banners", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop", title: "Event Banners" },
+    { id: 9, category: "Digital Prints", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop", title: "Corporate Brochures" },
+    { id: 10, category: "Business Cards", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop", title: "Wedding Invitations" },
+    { id: 11, category: "Digital Prints", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop", title: "Digital Print Solutions" },
+    { id: 12, category: "Business Cards", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop", title: "Professional Cards" }
   ];
 
   const filteredItems = activeCategory === "All" 

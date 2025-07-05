@@ -8,23 +8,16 @@ export const BannerSection = () => {
     {
       title: "Professional Digital Printing",
       subtitle: "High-quality prints that make your business shine",
-      image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=800&h=400&fit=crop",
+      image: "/lovable-uploads/01c42ca6-fdb7-4e02-b3a7-3e1ed9d8a233.png",
       cta: "Explore Services",
       gradient: "from-purple-600 to-pink-600"
     },
     {
-      title: "Custom Banner Solutions",
-      subtitle: "Eye-catching banners for events and promotions",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=400&fit=crop",
+      title: "Custom Design Solutions",
+      subtitle: "Creative workspace for all your design needs",
+      image: "/lovable-uploads/c528929b-f4c6-4679-8642-30d2dc35080a.png",
       cta: "View Samples",
       gradient: "from-pink-600 to-red-600"
-    },
-    {
-      title: "Wedding Print Packages",
-      subtitle: "Beautiful designs for your special day",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
-      cta: "Get Quote",
-      gradient: "from-red-600 to-purple-600"
     }
   ];
 
@@ -51,7 +44,7 @@ export const BannerSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           {banners.map((banner, index) => (
             <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white/80 backdrop-blur-sm border-0 relative">
               <div className="relative h-64 overflow-hidden">
@@ -85,6 +78,19 @@ export const BannerSection = () => {
               <div className={`absolute top-4 right-4 w-3 h-3 bg-gradient-to-r ${banner.gradient} rounded-full opacity-80 group-hover:scale-150 transition-transform duration-300`}></div>
             </Card>
           ))}
+        </div>
+
+        {/* New Banner Component for the third image */}
+        <div className="w-full">
+          <Card className="overflow-hidden bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 p-1">
+            <div className="bg-white rounded-lg overflow-hidden">
+              <img 
+                src="/lovable-uploads/d237a972-4404-4e22-b0c0-6c020ba095aa.png" 
+                alt="Rohila Graphics Banner"
+                className="w-full h-32 md:h-48 object-cover"
+              />
+            </div>
+          </Card>
         </div>
       </div>
     </section>
