@@ -1,9 +1,9 @@
-
 import { Search, MapPin, Star, Phone, Mail } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { BusinessCarousel } from "./BusinessCarousel";
 
 const businessImages = [
   "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=800&h=600&fit=crop",
@@ -73,33 +73,9 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Hero Banner */}
-      <div className="container mx-auto px-4 mb-6">
-        <Card className="relative h-48 md:h-64 overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-red-600">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <img 
-            src={businessImages[currentImage]} 
-            alt="Rohila Graphics Services" 
-            className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
-          />
-          <div className="relative z-10 p-6 md:p-8 text-white h-full flex flex-col justify-center">
-            <div className="max-w-md">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                Premium Printing Solutions
-              </h2>
-              <p className="text-sm md:text-base opacity-90 mb-4">
-                Professional quality prints for all your business needs
-              </p>
-              <div className="flex items-center space-x-4 text-sm">
-                <div className="flex items-center">
-                  <Star className="w-4 h-4 mr-1 fill-yellow-400 text-yellow-400" />
-                  <span>4.8 Rating</span>
-                </div>
-                <div>500+ Happy Clients</div>
-              </div>
-            </div>
-          </div>
-        </Card>
+      {/* Business Images Carousel */}
+      <div className="container mx-auto px-4">
+        <BusinessCarousel />
       </div>
 
       {/* Services Grid */}
