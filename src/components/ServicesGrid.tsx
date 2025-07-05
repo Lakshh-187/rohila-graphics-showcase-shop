@@ -1,7 +1,9 @@
+
 import { ImageServiceCard } from "./ImageServiceCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef } from "react";
 
 const allServices = [
   // Flex Printing Services
@@ -425,58 +427,121 @@ const allServices = [
   }
 ];
 
-export const ServicesGrid = () => {
-  const categories = [...new Set(allServices.map(service => service.category))];
+const ScrollableSection = ({ title, services, discount }: { title: string; services: any[]; discount?: string }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 280;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
-    <section className="py-20 px-4 md:px-6 bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100">
+    <div className="mb-8">
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800">{title}</h3>
+          {discount && (
+            <Badge className="bg-green-500 text-white px-3 py-1 text-sm font-semibold">
+              {discount}
+            </Badge>
+          )}
+        </div>
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            size="icon"
+            className="h-8 w-8 rounded-full"
+            onClick={() => scroll('left')}
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="h-8 w-8 rounded-full"
+            onClick={() => scroll('right')}
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+      
+      <div 
+        ref={scrollRef}
+        className="flex gap-4 overflow-x-auto scrollbar-hide pb-4"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {services.map((service, index) => (
+          <div key={index} className="flex-none w-64">
+            <ImageServiceCard {...service} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const ServicesGrid = () => {
+  const categories = [...new Set(allServices.map(service => service.category))];
+  const groupedServices = categories.reduce((acc, category) => {
+    acc[category] = allServices.filter(service => service.category === category);
+    return acc;
+  }, {} as Record<string, any[]>);
+
+  const discounts = {
+    "Flex Printing": "Up to 30% Off",
+    "Digital Printing": "Min. 25% Off", 
+    "Offset Printing": "From ₹499",
+    "Signage": "Min. 35% Off",
+    "Stickers": "Up to 50% Off",
+    "Apparel Printing": "From ₹150"
+  };
+
+  return (
+    <section className="py-16 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-6">
-            Our Premium Services
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent mb-4">
+            Premium Printing Services
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover our comprehensive range of printing solutions with competitive pricing. 
-            Over 40+ services available with professional quality and quick turnaround times.
-            <span className="block mt-2 text-green-600 font-semibold">All prices are negotiable for bulk orders!</span>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Browse our extensive range of professional printing solutions with competitive pricing
           </p>
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
-          {categories.map((category) => (
-            <Badge 
-              key={category}
-              variant="secondary" 
-              className="px-4 py-2 text-sm font-medium hover:bg-blue-100 hover:text-blue-800 transition-colors cursor-pointer"
-            >
-              {category}
-            </Badge>
-          ))}
+        {/* Hero Offers Section */}
+        <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-xl p-6 mb-8 text-white">
+          <h3 className="text-2xl font-bold mb-2">Huge offers credited</h3>
+          <p className="text-lg opacity-90">Limited time deals on all categories</p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-          {allServices.map((service, index) => (
-            <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <ImageServiceCard {...service} />
-            </div>
-          ))}
-        </div>
+        {/* Service Categories with Horizontal Scroll */}
+        {Object.entries(groupedServices).map(([category, services]) => (
+          <ScrollableSection
+            key={category}
+            title={category}
+            services={services}
+            discount={discounts[category as keyof typeof discounts]}
+          />
+        ))}
 
-        {/* Call to Action */}
-        <div className="text-center mt-16 animate-fade-in">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 text-white">
+        {/* Bottom CTA */}
+        <div className="text-center mt-12">
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Need Something Custom?
+              Need Custom Printing Solutions?
             </h3>
             <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-              We specialize in custom printing solutions. Contact us for personalized quotes 
-              and bulk pricing on any of our services.
+              Contact us for personalized quotes and bulk pricing on any printing service
             </p>
             <Button 
-              onClick={() => window.open('https://wa.me/919634877767?text=Hi! I need a custom printing solution. Can you help?', '_blank')}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg text-lg"
+              onClick={() => window.open('https://wa.me/919634877767?text=Hi! I need a custom printing solution.', '_blank')}
+              className="bg-white text-purple-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg text-lg"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Get Custom Quote
@@ -484,6 +549,16 @@ export const ServicesGrid = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 };

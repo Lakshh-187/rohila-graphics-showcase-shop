@@ -1,160 +1,262 @@
 
-import { useState } from "react";
-import { Download, Eye, Filter } from "lucide-react";
+import { useState, useRef } from "react";
+import { ArrowRight, Download, Eye, Palette, ChevronLeft, ChevronRight, Filter } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-interface SampleEbook {
-  id: number;
-  title: string;
-  category: string;
-  thumbnail: string;
-  pages: number;
-  downloadUrl: string;
-  previewUrl: string;
-  popular?: boolean;
-}
+const sampleCategories = [
+  {
+    title: "Business Cards",
+    items: [
+      { id: 1, title: "Corporate Business Cards", designs: 25, thumbnail: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=200&fit=crop", popular: true, discount: "30% Off" },
+      { id: 2, title: "Creative Business Cards", designs: 18, thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop", discount: "25% Off" },
+      { id: 3, title: "Minimalist Cards", designs: 22, thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop" },
+      { id: 4, title: "Luxury Business Cards", designs: 15, thumbnail: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=300&h=200&fit=crop", popular: true },
+      { id: 5, title: "Modern Cards", designs: 20, thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop" },
+    ]
+  },
+  {
+    title: "Wedding Invitations",
+    items: [
+      { id: 6, title: "Traditional Wedding Cards", designs: 30, thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop", popular: true, discount: "40% Off" },
+      { id: 7, title: "Modern Wedding Invites", designs: 25, thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop" },
+      { id: 8, title: "Floral Wedding Cards", designs: 28, thumbnail: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=200&fit=crop", discount: "35% Off" },
+      { id: 9, title: "Elegant Invitations", designs: 20, thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop" },
+    ]
+  },
+  {
+    title: "Brochures & Flyers",
+    items: [
+      { id: 10, title: "Corporate Brochures", designs: 20, thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop", discount: "20% Off" },
+      { id: 11, title: "Event Flyers", designs: 35, thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop", popular: true },
+      { id: 12, title: "Product Catalogs", designs: 22, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop" },
+      { id: 13, title: "Restaurant Menus", designs: 18, thumbnail: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=200&fit=crop", discount: "15% Off" },
+    ]
+  },
+  {
+    title: "Banners & Signage",
+    items: [
+      { id: 14, title: "Event Banners", designs: 18, thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop", popular: true, discount: "50% Off" },
+      { id: 15, title: "Store Signage", designs: 25, thumbnail: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" },
+      { id: 16, title: "Trade Show Displays", designs: 16, thumbnail: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=300&h=200&fit=crop", discount: "30% Off" },
+      { id: 17, title: "Promotional Banners", designs: 22, thumbnail: "https://images.unsplash.com/photo-1516962126636-27ad087061cc?w=300&h=200&fit=crop" },
+    ]
+  },
+  {
+    title: "Stickers & Labels",
+    items: [
+      { id: 18, title: "Product Stickers", designs: 40, thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop", popular: true, discount: "60% Off" },
+      { id: 19, title: "Custom Labels", designs: 35, thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop" },
+      { id: 20, title: "Brand Stickers", designs: 28, thumbnail: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=300&h=200&fit=crop", discount: "45% Off" },
+    ]
+  },
+  {
+    title: "T-Shirt Designs",
+    items: [
+      { id: 21, title: "Custom T-Shirts", designs: 32, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", popular: true, discount: "From ₹150" },
+      { id: 22, title: "Corporate T-Shirts", designs: 20, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop" },
+      { id: 23, title: "Event T-Shirts", designs: 25, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", discount: "From ₹120" },
+    ]
+  },
+  {
+    title: "Photo Prints",
+    items: [
+      { id: 24, title: "Canvas Prints", designs: 15, thumbnail: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=200&fit=crop", discount: "From ₹500" },
+      { id: 25, title: "Photo Albums", designs: 12, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop", popular: true },
+      { id: 26, title: "Wall Frames", designs: 18, thumbnail: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" },
+    ]
+  },
+  {
+    title: "Certificates & Awards",
+    items: [
+      { id: 27, title: "Achievement Certificates", designs: 20, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop", discount: "From ₹450" },
+      { id: 28, title: "Award Templates", designs: 15, thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop" },
+    ]
+  }
+];
 
-const Samples = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+const ScrollableSection = ({ title, items, discount }: { title: string; items: any[]; discount?: string }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const categories = ["All", "Business Cards", "Brochures", "Banners", "Flyers", "Posters", "Wedding", "Corporate"];
-
-  const sampleEbooks: SampleEbook[] = [
-    { id: 1, title: "Modern Business Card Designs", category: "Business Cards", thumbnail: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=400&fit=crop", pages: 12, downloadUrl: "#", previewUrl: "#", popular: true },
-    { id: 2, title: "Corporate Brochure Templates", category: "Brochures", thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=400&fit=crop", pages: 24, downloadUrl: "#", previewUrl: "#" },
-    { id: 3, title: "Event Banner Collection", category: "Banners", thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=300&h=400&fit=crop", pages: 18, downloadUrl: "#", previewUrl: "#", popular: true },
-    { id: 4, title: "Restaurant Flyer Designs", category: "Flyers", thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=400&fit=crop", pages: 15, downloadUrl: "#", previewUrl: "#" },
-    { id: 5, title: "Wedding Invitation Suite", category: "Wedding", thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=400&fit=crop", pages: 20, downloadUrl: "#", previewUrl: "#" },
-    { id: 6, title: "Product Poster Templates", category: "Posters", thumbnail: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&h=400&fit=crop", pages: 16, downloadUrl: "#", previewUrl: "#" },
-    { id: 7, title: "Minimalist Business Cards", category: "Business Cards", thumbnail: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=400&fit=crop", pages: 10, downloadUrl: "#", previewUrl: "#" },
-    { id: 8, title: "Tech Company Brochures", category: "Brochures", thumbnail: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300&h=400&fit=crop", pages: 22, downloadUrl: "#", previewUrl: "#" },
-    { id: 9, title: "Festival Banner Designs", category: "Banners", thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=400&fit=crop", pages: 14, downloadUrl: "#", previewUrl: "#" },
-    { id: 10, title: "Food & Beverage Flyers", category: "Flyers", thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300&h=400&fit=crop", pages: 18, downloadUrl: "#", previewUrl: "#" },
-    { id: 11, title: "Corporate Identity Pack", category: "Corporate", thumbnail: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=400&fit=crop", pages: 28, downloadUrl: "#", previewUrl: "#", popular: true },
-    { id: 12, title: "Luxury Wedding Cards", category: "Wedding", thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=400&fit=crop", pages: 25, downloadUrl: "#", previewUrl: "#" },
-    { id: 13, title: "Real Estate Flyers", category: "Flyers", thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=300&h=400&fit=crop", pages: 12, downloadUrl: "#", previewUrl: "#" },
-    { id: 14, title: "Concert Poster Collection", category: "Posters", thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=400&fit=crop", pages: 20, downloadUrl: "#", previewUrl: "#" },
-    { id: 15, title: "Medical Brochure Templates", category: "Brochures", thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=400&fit=crop", pages: 16, downloadUrl: "#", previewUrl: "#" },
-    { id: 16, title: "Fashion Banner Designs", category: "Banners", thumbnail: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&h=400&fit=crop", pages: 14, downloadUrl: "#", previewUrl: "#" },
-    { id: 17, title: "Professional Business Cards", category: "Business Cards", thumbnail: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=400&fit=crop", pages: 18, downloadUrl: "#", previewUrl: "#" },
-    { id: 18, title: "Educational Flyer Pack", category: "Flyers", thumbnail: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300&h=400&fit=crop", pages: 22, downloadUrl: "#", previewUrl: "#" },
-    { id: 19, title: "Startup Poster Templates", category: "Posters", thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=400&fit=crop", pages: 15, downloadUrl: "#", previewUrl: "#" },
-    { id: 20, title: "Traditional Wedding Suite", category: "Wedding", thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300&h=400&fit=crop", pages: 30, downloadUrl: "#", previewUrl: "#" },
-    { id: 21, title: "Creative Business Cards", category: "Business Cards", thumbnail: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=400&fit=crop", pages: 16, downloadUrl: "#", previewUrl: "#" },
-    { id: 22, title: "Healthcare Brochures", category: "Brochures", thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=400&fit=crop", pages: 20, downloadUrl: "#", previewUrl: "#" },
-    { id: 23, title: "Sports Banner Collection", category: "Banners", thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=300&h=400&fit=crop", pages: 12, downloadUrl: "#", previewUrl: "#" },
-    { id: 24, title: "Gym & Fitness Flyers", category: "Flyers", thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=400&fit=crop", pages: 14, downloadUrl: "#", previewUrl: "#" },
-    { id: 25, title: "Art Exhibition Posters", category: "Posters", thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=400&fit=crop", pages: 18, downloadUrl: "#", previewUrl: "#" },
-    { id: 26, title: "Corporate Annual Report", category: "Corporate", thumbnail: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&h=400&fit=crop", pages: 32, downloadUrl: "#", previewUrl: "#" },
-    { id: 27, title: "Elegant Business Cards", category: "Business Cards", thumbnail: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=400&fit=crop", pages: 12, downloadUrl: "#", previewUrl: "#" },
-    { id: 28, title: "Travel Brochure Pack", category: "Brochures", thumbnail: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300&h=400&fit=crop", pages: 24, downloadUrl: "#", previewUrl: "#" },
-    { id: 29, title: "Christmas Banner Designs", category: "Banners", thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=400&fit=crop", pages: 16, downloadUrl: "#", previewUrl: "#" },
-    { id: 30, title: "Beauty Salon Flyers", category: "Flyers", thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300&h=400&fit=crop", pages: 14, downloadUrl: "#", previewUrl: "#" },
-    { id: 31, title: "Movie Poster Templates", category: "Posters", thumbnail: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=400&fit=crop", pages: 20, downloadUrl: "#", previewUrl: "#" },
-    { id: 32, title: "Vintage Wedding Collection", category: "Wedding", thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=400&fit=crop", pages: 26, downloadUrl: "#", previewUrl: "#" },
-    { id: 33, title: "Digital Business Cards", category: "Business Cards", thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=300&h=400&fit=crop", pages: 10, downloadUrl: "#", previewUrl: "#" },
-    { id: 34, title: "Insurance Brochures", category: "Brochures", thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=400&fit=crop", pages: 18, downloadUrl: "#", previewUrl: "#" },
-    { id: 35, title: "Sale Banner Collection", category: "Banners", thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=400&fit=crop", pages: 15, downloadUrl: "#", previewUrl: "#" },
-    { id: 36, title: "Club Event Flyers", category: "Flyers", thumbnail: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&h=400&fit=crop", pages: 12, downloadUrl: "#", previewUrl: "#" },
-    { id: 37, title: "Motivational Posters", category: "Posters", thumbnail: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=400&fit=crop", pages: 22, downloadUrl: "#", previewUrl: "#" },
-    { id: 38, title: "Brand Identity Manual", category: "Corporate", thumbnail: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300&h=400&fit=crop", pages: 40, downloadUrl: "#", previewUrl: "#" },
-    { id: 39, title: "Modern Wedding Cards", category: "Wedding", thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300&h=400&fit=crop", pages: 28, downloadUrl: "#", previewUrl: "#" },
-    { id: 40, title: "Complete Design Pack", category: "Corporate", thumbnail: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300&h=400&fit=crop", pages: 50, downloadUrl: "#", previewUrl: "#", popular: true }
-  ];
-
-  const filteredEbooks = selectedCategory === "All" 
-    ? sampleEbooks 
-    : sampleEbooks.filter(ebook => ebook.category === selectedCategory);
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 200;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-      {/* Header */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 via-blue-800 to-slate-900 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold mb-6">Design Samples</h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-            Explore our extensive collection of professionally designed templates. 
-            Download e-books with sample designs to inspire your next project.
+    <div className="mb-8">
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <h3 className="text-lg md:text-xl font-bold text-gray-800">{title}</h3>
+          {discount && (
+            <Badge className="bg-green-500 text-white px-2 py-1 text-xs font-semibold">
+              {discount}
+            </Badge>
+          )}
+        </div>
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            size="icon"
+            className="h-7 w-7 rounded-full"
+            onClick={() => scroll('left')}
+          >
+            <ChevronLeft className="h-3 w-3" />
+          </Button>
+          <Button
+            variant="outline" 
+            size="icon"
+            className="h-7 w-7 rounded-full"
+            onClick={() => scroll('right')}
+          >
+            <ChevronRight className="h-3 w-3" />
+          </Button>
+        </div>
+      </div>
+      
+      <div 
+        ref={scrollRef}
+        className="flex gap-3 overflow-x-auto scrollbar-hide pb-4"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {items.map((item) => (
+          <Card key={item.id} className="flex-none w-40 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div className="relative">
+              <img 
+                src={item.thumbnail} 
+                alt={item.title}
+                className="w-full h-24 object-cover"
+              />
+              {item.popular && (
+                <Badge className="absolute top-1 left-1 bg-red-500 text-white text-xs px-1 py-0.5">
+                  Popular
+                </Badge>
+              )}
+              {item.discount && (
+                <Badge className="absolute top-1 right-1 bg-green-500 text-white text-xs px-1 py-0.5">
+                  {item.discount}
+                </Badge>
+              )}
+            </div>
+            
+            <CardContent className="p-3">
+              <h4 className="font-semibold text-xs text-gray-800 mb-1 line-clamp-2 leading-tight">
+                {item.title}
+              </h4>
+              <div className="flex items-center justify-between text-xs text-gray-600 mb-2">
+                <span className="font-medium">{item.designs} designs</span>
+                <Button size="sm" variant="ghost" className="h-6 w-6 p-0">
+                  <Eye className="w-3 h-3" />
+                </Button>
+              </div>
+              <Button 
+                size="sm"
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white text-xs py-1"
+              >
+                <Download className="w-3 h-3 mr-1" />
+                Download
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Samples = () => {
+  const [selectedFilter, setSelectedFilter] = useState("All");
+  const filters = ["All", "Popular", "New", "Business", "Wedding", "Corporate"];
+
+  return (
+    <div className="min-h-screen bg-gray-50 pt-20">
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center mb-4">
+            <Palette className="w-8 h-8 text-purple-600 mr-3" />
+            <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1">
+              Design Gallery
+            </Badge>
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent mb-4">
+            Design Sample Library
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Browse 40+ design e-books with thousands of templates for all your printing needs
           </p>
         </div>
-      </section>
 
-      {/* Category Filter */}
-      <section className="py-8 bg-white/50 backdrop-blur-sm sticky top-16 z-40">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center gap-4 overflow-x-auto">
-            <Filter className="w-5 h-5 text-gray-600 flex-shrink-0" />
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory(category)}
-                className="whitespace-nowrap"
-              >
-                {category}
-              </Button>
-            ))}
+        {/* Huge Offers Section */}
+        <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-xl p-6 mb-8 text-white">
+          <h2 className="text-xl md:text-2xl font-bold mb-2">Huge offers credited</h2>
+          <p className="text-base opacity-90">Limited time discounts on all design categories</p>
+        </div>
+
+        {/* Filter Tabs */}
+        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+          {filters.map((filter) => (
+            <Button
+              key={filter}
+              variant={selectedFilter === filter ? "default" : "outline"}
+              size="sm"
+              className={`flex-none ${selectedFilter === filter ? 'bg-purple-600 text-white' : ''}`}
+              onClick={() => setSelectedFilter(filter)}
+            >
+              <Filter className="w-3 h-3 mr-1" />
+              {filter}
+            </Button>
+          ))}
+        </div>
+
+        {/* Sample Categories */}
+        {sampleCategories.map((category) => (
+          <ScrollableSection
+            key={category.title}
+            title={category.title}
+            items={category.items}
+            discount={category.title === "Stickers & Labels" ? "Up to 60% Off" : 
+                     category.title === "Wedding Invitations" ? "Up to 40% Off" :
+                     category.title === "T-Shirt Designs" ? "From ₹120" : undefined}
+          />
+        ))}
+
+        {/* Bottom Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+          <div className="text-center bg-white rounded-lg p-4 shadow-sm">
+            <div className="text-2xl font-bold text-purple-600">40+</div>
+            <div className="text-sm text-gray-600">E-books</div>
+          </div>
+          <div className="text-center bg-white rounded-lg p-4 shadow-sm">
+            <div className="text-2xl font-bold text-pink-600">1000+</div>
+            <div className="text-sm text-gray-600">Templates</div>
+          </div>
+          <div className="text-center bg-white rounded-lg p-4 shadow-sm">
+            <div className="text-2xl font-bold text-red-600">8</div>
+            <div className="text-sm text-gray-600">Categories</div>
+          </div>
+          <div className="text-center bg-white rounded-lg p-4 shadow-sm">
+            <div className="text-2xl font-bold text-green-600">Free</div>
+            <div className="text-sm text-gray-600">Downloads</div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* E-books Grid */}
-      <section className="py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredEbooks.map((ebook) => (
-              <Card key={ebook.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                <div className="relative">
-                  <img 
-                    src={ebook.thumbnail} 
-                    alt={ebook.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {ebook.popular && (
-                    <Badge className="absolute top-3 left-3 bg-red-500">
-                      Popular
-                    </Badge>
-                  )}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <div className="flex gap-2">
-                      <Button size="sm" variant="secondary">
-                        <Eye className="w-4 h-4 mr-1" />
-                        Preview
-                      </Button>
-                      <Button size="sm">
-                        <Download className="w-4 h-4 mr-1" />
-                        Download
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-                
-                <CardContent className="p-4">
-                  <h3 className="font-bold text-lg mb-2 line-clamp-2">{ebook.title}</h3>
-                  <div className="flex items-center justify-between text-sm text-gray-600 mb-3">
-                    <Badge variant="outline">{ebook.category}</Badge>
-                    <span>{ebook.pages} pages</span>
-                  </div>
-                  
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <Eye className="w-4 h-4 mr-1" />
-                      Preview
-                    </Button>
-                    <Button size="sm" className="flex-1">
-                      <Download className="w-4 h-4 mr-1" />
-                      Download
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <style jsx>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </div>
   );
 };
