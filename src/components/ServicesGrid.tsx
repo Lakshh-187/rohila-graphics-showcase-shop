@@ -550,7 +550,7 @@ export const ServicesGrid = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .scrollbar-hide {
           -ms-overflow-style: none;
           scrollbar-width: none;
