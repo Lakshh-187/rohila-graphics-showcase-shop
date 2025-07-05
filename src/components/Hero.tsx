@@ -1,26 +1,19 @@
 
-import { Phone, Mail, MapPin, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { Search, MapPin, Star, Phone, Mail } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const businessImages = [
   "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=800&h=600&fit=crop",
   "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
   "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1516962126636-27ad087061cc?w=800&h=600&fit=crop",
-];
-
-const videoSources = [
-  "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761",
-  "https://player.vimeo.com/external/190291895.sd.mp4?s=1f40b97c13dc1b3f2dc2e36b3c9e4f0b3d3c8e6c&profile_id=139",
 ];
 
 export const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [showVideo, setShowVideo] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,173 +22,192 @@ export const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % businessImages.length);
-  };
+  const services = [
+    { title: "Business Cards", image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=200&fit=crop", popular: true },
+    { title: "Banner Printing", image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop", popular: false },
+    { title: "Wedding Cards", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop", popular: true },
+    { title: "Digital Printing", image: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=300&h=200&fit=crop", popular: false },
+    { title: "Photo Printing", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop", popular: false },
+    { title: "Flex Printing", image: "https://images.unsplash.com/photo-1516962126636-27ad087061cc?w=300&h=200&fit=crop", popular: true },
+  ];
 
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + businessImages.length) % businessImages.length);
+  const handleWhatsApp = () => {
+    const message = encodeURIComponent("Hi! I'm interested in your printing services. Can you help me with a quote?");
+    window.open(`https://wa.me/919634877767?text=${message}`, '_blank');
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-pink-800 to-red-900 text-white overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-red-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-pink-400/10 to-red-400/10 rounded-full blur-2xl animate-pulse delay-500"></div>
-      </div>
-      
-      <div className="absolute inset-0 bg-black/10"></div>
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:60px_60px] animate-pulse"></div>
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Text content */}
-          <div className="animate-fade-in text-center lg:text-left">
-            <div className="mb-4">
-              <span className="inline-block bg-gradient-to-r from-purple-400 to-pink-400 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-                ✨ Premium Design Studio
-              </span>
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">
-              ROHILA
-              <br />
-              <span className="bg-gradient-to-r from-pink-300 to-red-300 bg-clip-text text-transparent">
-                GRAPHICS
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-6 text-purple-100 font-light">
-              Where Creativity Meets Professional Excellence
-            </p>
-            <p className="text-base md:text-lg mb-8 text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Transform your vision into stunning reality with our premium printing solutions. 
-              From elegant business cards to eye-catching banners, we craft designs that speak your brand's language.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-              >
-                Explore Our Work
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full"
-              >
-                Get Free Quote
-              </Button>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto lg:mx-0">
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 p-4 hover:bg-white/20 transition-all duration-300 group">
-                <Phone className="h-6 w-6 text-purple-300 mb-2 mx-auto group-hover:scale-110 transition-transform" />
-                <h3 className="font-semibold mb-1 text-sm">Call & WhatsApp</h3>
-                <p className="text-purple-200 text-xs font-medium">9634877767</p>
-              </Card>
-
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 p-4 hover:bg-white/20 transition-all duration-300 group">
-                <Mail className="h-6 w-6 text-purple-300 mb-2 mx-auto group-hover:scale-110 transition-transform" />
-                <h3 className="font-semibold mb-1 text-sm">Email</h3>
-                <p className="text-purple-200 text-xs font-medium">rohilagraphics@gmail.com</p>
-              </Card>
-
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 p-4 hover:bg-white/20 transition-all duration-300 group">
-                <MapPin className="h-6 w-6 text-purple-300 mb-2 mx-auto group-hover:scale-110 transition-transform" />
-                <h3 className="font-semibold mb-1 text-sm">Location</h3>
-                <p className="text-purple-200 text-xs font-medium">Nakur, Saharanpur</p>
-              </Card>
-            </div>
-          </div>
-
-          {/* Right side - Media showcase */}
-          <div className="relative animate-scale-in">
-            <div className="relative h-96 md:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-              {showVideo ? (
-                <div className="w-full h-full bg-black rounded-3xl flex items-center justify-center">
-                  <video 
-                    className="w-full h-full object-cover rounded-3xl" 
-                    autoPlay 
-                    muted 
-                    loop
-                    src={videoSources[0]}
-                  />
-                </div>
-              ) : (
-                <>
-                  <img 
-                    src={businessImages[currentImage]} 
-                    alt="Rohila Graphics Business" 
-                    className="w-full h-full object-cover transition-all duration-1000"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  
-                  {/* Play button overlay */}
-                  <Button
-                    onClick={() => setShowVideo(true)}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white border-0 backdrop-blur-md p-4 h-auto rounded-full group"
-                  >
-                    <Play className="h-8 w-8 group-hover:scale-110 transition-transform" />
-                  </Button>
-                </>
-              )}
-              
-              {!showVideo && (
-                <>
-                  {/* Navigation buttons */}
-                  <Button
-                    onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white border-0 backdrop-blur-md p-2 h-auto rounded-full"
-                    size="icon"
-                  >
-                    <ChevronLeft className="h-6 w-6" />
-                  </Button>
-                  
-                  <Button
-                    onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white border-0 backdrop-blur-md p-2 h-auto rounded-full"
-                    size="icon"
-                  >
-                    <ChevronRight className="h-6 w-6" />
-                  </Button>
-
-                  {/* Dots indicator */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-                    {businessImages.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentImage(index)}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          index === currentImage ? 'bg-white scale-125' : 'bg-white/50'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-
-            {/* Floating elements */}
-            <div className="absolute -top-6 -right-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-2xl shadow-lg animate-bounce">
-              <div className="text-center">
-                <div className="text-2xl font-bold">500+</div>
-                <div className="text-xs">Happy Clients</div>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-red-50">
+      {/* Header */}
+      <div className="bg-white shadow-sm">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-xl font-bold gradient-text">Rohila Graphics</h1>
+              <div className="flex items-center text-sm text-gray-600">
+                <MapPin className="w-4 h-4 mr-1" />
+                <span>Nakur, Saharanpur</span>
               </div>
             </div>
-
-            <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-red-500 to-pink-500 text-white p-4 rounded-2xl shadow-lg animate-pulse">
-              <div className="text-center">
-                <div className="text-2xl font-bold">24/7</div>
-                <div className="text-xs">Support</div>
-              </div>
+            <div className="flex items-center space-x-2">
+              <Button size="sm" variant="outline" asChild>
+                <a href="tel:9634877767">
+                  <Phone className="w-4 h-4 mr-1" />
+                  Call
+                </a>
+              </Button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Search Section */}
+      <div className="container mx-auto px-4 py-6">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+          <input
+            type="text"
+            placeholder="Search for printing services..."
+            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white shadow-sm"
+          />
+        </div>
+      </div>
+
+      {/* Hero Banner */}
+      <div className="container mx-auto px-4 mb-6">
+        <Card className="relative h-48 md:h-64 overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-red-600">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <img 
+            src={businessImages[currentImage]} 
+            alt="Rohila Graphics Services" 
+            className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
+          />
+          <div className="relative z-10 p-6 md:p-8 text-white h-full flex flex-col justify-center">
+            <div className="max-w-md">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                Premium Printing Solutions
+              </h2>
+              <p className="text-sm md:text-base opacity-90 mb-4">
+                Professional quality prints for all your business needs
+              </p>
+              <div className="flex items-center space-x-4 text-sm">
+                <div className="flex items-center">
+                  <Star className="w-4 h-4 mr-1 fill-yellow-400 text-yellow-400" />
+                  <span>4.8 Rating</span>
+                </div>
+                <div>500+ Happy Clients</div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      {/* Services Grid */}
+      <div className="container mx-auto px-4 mb-8">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-lg font-semibold text-gray-800">What are you looking for?</h3>
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={() => navigate('/samples')}
+            className="text-purple-600 hover:text-purple-700"
+          >
+            View All
+          </Button>
+        </div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {services.map((service, index) => (
+            <Card 
+              key={index}
+              className="relative overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer group"
+              onClick={() => navigate('/samples')}
+            >
+              {service.popular && (
+                <div className="absolute top-2 right-2 z-10">
+                  <span className="bg-gradient-to-r from-pink-500 to-red-500 text-white text-xs px-2 py-1 rounded-full">
+                    Popular
+                  </span>
+                </div>
+              )}
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-3">
+                <h4 className="font-medium text-sm text-center text-gray-800">
+                  {service.title}
+                </h4>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Contact Cards */}
+      <div className="container mx-auto px-4 mb-8">
+        <div className="grid md:grid-cols-2 gap-4">
+          <Card className="p-4 bg-gradient-to-r from-green-500 to-green-600 text-white">
+            <div className="flex items-center justify-between">
+              <div>
+                <h4 className="font-semibold mb-1">Quick Order via WhatsApp</h4>
+                <p className="text-sm opacity-90">Get instant quotes and place orders</p>
+              </div>
+              <Button 
+                onClick={handleWhatsApp}
+                className="bg-white text-green-600 hover:bg-gray-100"
+              >
+                Chat Now
+              </Button>
+            </div>
+          </Card>
+
+          <Card className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+            <div className="flex items-center justify-between">
+              <div>
+                <h4 className="font-semibold mb-1">Call for Custom Orders</h4>
+                <p className="text-sm opacity-90">Speak with our design experts</p>
+              </div>
+              <Button asChild className="bg-white text-blue-600 hover:bg-gray-100">
+                <a href="tel:9634877767">Call Now</a>
+              </Button>
+            </div>
+          </Card>
+        </div>
+      </div>
+
+      {/* Features */}
+      <div className="container mx-auto px-4 pb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Star className="w-6 h-6 text-purple-600" />
+            </div>
+            <h5 className="font-medium text-sm">Premium Quality</h5>
+          </div>
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Phone className="w-6 h-6 text-pink-600" />
+            </div>
+            <h5 className="font-medium text-sm">24/7 Support</h5>
+          </div>
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Mail className="w-6 h-6 text-red-600" />
+            </div>
+            <h5 className="font-medium text-sm">Fast Delivery</h5>
+          </div>
+          <div className="text-center p-4">
+            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <MapPin className="w-6 h-6 text-purple-600" />
+            </div>
+            <h5 className="font-medium text-sm">Local Service</h5>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
