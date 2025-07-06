@@ -65,6 +65,10 @@ const Testimonial = () => {
     window.open("https://search.google.com/local/writereview?placeid=ChIJsy8xNjJj4TkRKLlyXxUhqyo", '_blank');
   };
 
+  const handleJustdialReview = () => {
+    window.open("https://www.justdial.com/Saharanpur/Rohilla-Graphics-Flex-Printing-Near-SBI-Main-Branch-Nakur/9999PX132-X132-131206222610-H8Z4_BZDET", '_blank');
+  };
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
@@ -85,10 +89,16 @@ const Testimonial = () => {
           <p className="text-xl text-blue-200 max-w-3xl mx-auto mb-8">
             See what our satisfied customers have to say about our printing services
           </p>
-          <Button onClick={handleGoogleReview} className="bg-green-600 hover:bg-green-700">
-            <ExternalLink className="w-4 h-4 mr-2" />
-            Write a Google Review
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button onClick={handleGoogleReview} className="bg-green-600 hover:bg-green-700">
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Write a Google Review
+            </Button>
+            <Button onClick={handleJustdialReview} className="bg-orange-600 hover:bg-orange-700">
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Review on Justdial
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -181,10 +191,16 @@ const Testimonial = () => {
               <p className="mb-6 text-blue-100">
                 Help others discover our quality printing services by sharing your experience
               </p>
-              <Button onClick={handleGoogleReview} variant="secondary" size="lg">
-                <Star className="w-4 h-4 mr-2" />
-                Leave a Google Review
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button onClick={handleGoogleReview} variant="secondary" size="lg">
+                  <Star className="w-4 h-4 mr-2" />
+                  Google Review
+                </Button>
+                <Button onClick={handleJustdialReview} variant="secondary" size="lg">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Justdial Review
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>

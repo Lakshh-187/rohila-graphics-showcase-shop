@@ -1,6 +1,7 @@
 
 import { Hero } from "@/components/Hero";
 import { ServicesGrid } from "@/components/ServicesGrid";
+import { PageRedirectCards } from "@/components/PageRedirectCards";
 import { SamplesSection } from "@/components/SamplesSection";
 import { BulkQuantity } from "@/components/BulkQuantity";
 import { BannerSection } from "@/components/BannerSection";
@@ -18,6 +19,7 @@ const Index = () => {
       <Hero />
       <BannerSection />
       <ServicesGrid />
+      <PageRedirectCards />
       <SamplesSection />
       <GallerySection />
       <BulkQuantity />
