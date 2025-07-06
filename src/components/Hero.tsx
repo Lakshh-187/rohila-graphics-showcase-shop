@@ -24,11 +24,11 @@ export const Hero = () => {
   }, []);
 
   const services = [
-    { title: "Flex Banner Printing", image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=200&fit=crop", popular: true },
-    { title: "Digital Printing", image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop", popular: false },
-    { title: "Offset Printing", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop", popular: true },
-    { title: "Digital Paper Printing", image: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=300&h=200&fit=crop", popular: false },
-    { title: "T-shirt Printing", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop", popular: false },
+    { title: "Flex Banner Printing", image: "/lovable-uploads/70522788-fd14-40e9-9758-c7707e074864.png", popular: true },
+    { title: "Digital Printing", image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png", popular: false },
+    { title: "Offset Printing", image: "/lovable-uploads/a56a81f0-6086-492f-a98f-8bd1a69bf1f0.png", popular: true },
+    { title: "Digital Paper Printing", image: "/lovable-uploads/6124f148-3aa0-4758-b1c9-eee61ed37f56.png", popular: false },
+    { title: "T-shirt Printing", image: "/lovable-uploads/57a869a6-aadb-4d18-8b33-ef92ef3b632d.png", popular: false },
   ];
 
   const handleWhatsApp = () => {
@@ -41,18 +41,18 @@ export const Hero = () => {
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
             <div>
-              <h1 className="text-xl font-bold gradient-text">Rohila Graphics</h1>
-              <div className="flex items-center text-sm text-gray-600">
-                <MapPin className="w-4 h-4 mr-1" />
+              <h1 className="text-lg sm:text-xl font-bold gradient-text">Rohila Graphics</h1>
+              <div className="flex items-center text-xs sm:text-sm text-gray-600">
+                <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                 <span>Nakur, Saharanpur</span>
               </div>
             </div>
             <div className="flex items-center space-x-2">
-              <Button size="sm" variant="outline" asChild>
+              <Button size="sm" variant="outline" asChild className="text-xs sm:text-sm">
                 <a href="tel:9634877767">
-                  <Phone className="w-4 h-4 mr-1" />
+                  <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                   Call
                 </a>
               </Button>
@@ -62,13 +62,13 @@ export const Hero = () => {
       </div>
 
       {/* Search Section */}
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 py-4 sm:py-6">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5" />
           <input
             type="text"
             placeholder="Search for printing services..."
-            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white shadow-sm"
+            className="w-full pl-8 sm:pl-10 pr-4 py-2 sm:py-3 text-sm sm:text-base rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white shadow-sm"
           />
         </div>
       </div>
@@ -79,20 +79,20 @@ export const Hero = () => {
       </div>
 
       {/* Services Grid */}
-      <div className="container mx-auto px-4 mb-8">
+      <div className="container mx-auto px-4 mb-6 sm:mb-8">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-semibold text-gray-800">What are you looking for?</h3>
+          <h3 className="text-base sm:text-lg font-semibold text-gray-800">What are you looking for?</h3>
           <Button 
             variant="ghost" 
             size="sm" 
             onClick={() => navigate('/samples')}
-            className="text-purple-600 hover:text-purple-700"
+            className="text-purple-600 hover:text-purple-700 text-xs sm:text-sm"
           >
             View All
           </Button>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
           {services.map((service, index) => (
             <Card 
               key={index}
@@ -113,8 +113,8 @@ export const Hero = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-3">
-                <h4 className="font-medium text-sm text-center text-gray-800">
+              <div className="p-2 sm:p-3">
+                <h4 className="font-medium text-xs sm:text-sm text-center text-gray-800 leading-tight">
                   {service.title}
                 </h4>
               </div>
@@ -124,30 +124,30 @@ export const Hero = () => {
       </div>
 
       {/* Contact Cards */}
-      <div className="container mx-auto px-4 mb-8">
-        <div className="grid md:grid-cols-2 gap-4">
-          <Card className="p-4 bg-gradient-to-r from-green-500 to-green-600 text-white">
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="font-semibold mb-1">Quick Order via WhatsApp</h4>
-                <p className="text-sm opacity-90">Get instant quotes and place orders</p>
+      <div className="container mx-auto px-4 mb-6 sm:mb-8">
+        <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
+          <Card className="p-3 sm:p-4 bg-gradient-to-r from-green-500 to-green-600 text-white">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="flex-1">
+                <h4 className="font-semibold mb-1 text-sm sm:text-base">Quick Order via WhatsApp</h4>
+                <p className="text-xs sm:text-sm opacity-90">Get instant quotes and place orders</p>
               </div>
               <Button 
                 onClick={handleWhatsApp}
-                className="bg-white text-green-600 hover:bg-gray-100"
+                className="bg-white text-green-600 hover:bg-gray-100 text-xs sm:text-sm px-3 sm:px-4 py-2 w-full sm:w-auto"
               >
                 Chat Now
               </Button>
             </div>
           </Card>
 
-          <Card className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="font-semibold mb-1">Call for Custom Orders</h4>
-                <p className="text-sm opacity-90">Speak with our design experts</p>
+          <Card className="p-3 sm:p-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="flex-1">
+                <h4 className="font-semibold mb-1 text-sm sm:text-base">Call for Custom Orders</h4>
+                <p className="text-xs sm:text-sm opacity-90">Speak with our design experts</p>
               </div>
-              <Button asChild className="bg-white text-blue-600 hover:bg-gray-100">
+              <Button asChild className="bg-white text-blue-600 hover:bg-gray-100 text-xs sm:text-sm px-3 sm:px-4 py-2 w-full sm:w-auto">
                 <a href="tel:9634877767">Call Now</a>
               </Button>
             </div>
@@ -156,31 +156,31 @@ export const Hero = () => {
       </div>
 
       {/* Features */}
-      <div className="container mx-auto px-4 pb-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="text-center p-4">
-            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <Star className="w-6 h-6 text-purple-600" />
+      <div className="container mx-auto px-4 pb-6 sm:pb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <div className="text-center p-3 sm:p-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Star className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
             </div>
-            <h5 className="font-medium text-sm">Premium Quality</h5>
+            <h5 className="font-medium text-xs sm:text-sm">Premium Quality</h5>
           </div>
-          <div className="text-center p-4">
-            <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <Phone className="w-6 h-6 text-pink-600" />
+          <div className="text-center p-3 sm:p-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-pink-600" />
             </div>
-            <h5 className="font-medium text-sm">24/7 Support</h5>
+            <h5 className="font-medium text-xs sm:text-sm">24/7 Support</h5>
           </div>
-          <div className="text-center p-4">
-            <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <Mail className="w-6 h-6 text-red-600" />
+          <div className="text-center p-3 sm:p-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
             </div>
-            <h5 className="font-medium text-sm">Fast Delivery</h5>
+            <h5 className="font-medium text-xs sm:text-sm">Fast Delivery</h5>
           </div>
-          <div className="text-center p-4">
-            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <MapPin className="w-6 h-6 text-purple-600" />
+          <div className="text-center p-3 sm:p-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
             </div>
-            <h5 className="font-medium text-sm">Local Service</h5>
+            <h5 className="font-medium text-xs sm:text-sm">Local Service</h5>
           </div>
         </div>
       </div>

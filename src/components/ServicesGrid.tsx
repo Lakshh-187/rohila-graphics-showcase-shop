@@ -1,3 +1,4 @@
+
 import { ImageServiceCard } from "./ImageServiceCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,7 @@ const allServices = [
     unit: "per sq ft",
     description: "High-quality vinyl banners perfect for outdoor advertising and events",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/70522788-fd14-40e9-9758-c7707e074864.png",
     category: "Flex Printing",
     popular: true
   },
@@ -22,7 +23,7 @@ const allServices = [
     unit: "per sq ft", 
     description: "Enhanced durability banner with superior weather resistance",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/5a5f355b-2ed4-4e08-b901-227fa3135927.png",
     category: "Flex Printing"
   },
   {
@@ -31,7 +32,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Premium quality banner with excellent color reproduction",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/ca612801-ab84-4543-9850-87eee6aa5035.png",
     category: "Flex Printing"
   },
   {
@@ -40,7 +41,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Industrial grade banner for long-term outdoor installations",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=400&h=300&fit=crop",
     category: "Flex Printing"
   },
   {
@@ -69,7 +70,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Durable vinyl prints for vehicle wraps and outdoor signage",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png",
     category: "Digital Printing",
     popular: true
   },
@@ -106,7 +107,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Artistic canvas prints for interior decoration",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/bbae2d16-0375-4e01-bc75-b2e2e73c8c5f.png",
     category: "Digital Printing"
   },
   {
@@ -115,7 +116,7 @@ const allServices = [
     unit: "per sq ft",
     description: "High-quality digital banner prints for advertising",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/0bc6f65d-821c-4c64-b073-c44552268199.png",
     category: "Digital Printing"
   },
 
@@ -126,7 +127,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Custom wall graphics with professional installation included",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/04e04c57-e0ff-4359-a7ce-4ccab6f420f8.png",
     category: "Wallpaper"
   },
   {
@@ -144,7 +145,7 @@ const allServices = [
     unit: "per sq ft",
     description: "3D textured wallpapers for premium interior design",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1615873968403-89e068629265?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/8c07e8ca-fa72-4e2e-87ce-fd1140c5d7df.png",
     category: "Wallpaper"
   },
   {
@@ -153,7 +154,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Custom photo wallpapers from your images",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/dd17eba2-8f4a-4716-a454-711918909e4b.png",
     category: "Wallpaper"
   },
 
@@ -349,40 +350,40 @@ const ScrollableSection = ({ title, services, discount }: { title: string; servi
     <div className="mb-8">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800">{title}</h3>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">{title}</h3>
           {discount && (
-            <Badge className="bg-green-500 text-white px-3 py-1 text-sm font-semibold">
+            <Badge className="bg-green-500 text-white px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold">
               {discount}
             </Badge>
           )}
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-1 sm:gap-2">
           <Button
             variant="outline"
             size="icon"
-            className="h-8 w-8 rounded-full"
+            className="h-6 w-6 sm:h-8 sm:w-8 rounded-full"
             onClick={() => scroll('left')}
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4" />
           </Button>
           <Button
             variant="outline"
             size="icon"
-            className="h-8 w-8 rounded-full"
+            className="h-6 w-6 sm:h-8 sm:w-8 rounded-full"
             onClick={() => scroll('right')}
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
           </Button>
         </div>
       </div>
       
       <div 
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto scrollbar-hide pb-4"
+        className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide pb-4"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {services.map((service, index) => (
-          <div key={index} className="flex-none w-64">
+          <div key={index} className="flex-none w-56 sm:w-64">
             <ImageServiceCard {...service} />
           </div>
         ))}
@@ -408,21 +409,21 @@ export const ServicesGrid = () => {
   };
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-8 sm:py-12 lg:py-16 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent mb-4">
             Premium Printing Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             Browse our extensive range of professional printing solutions with competitive pricing
           </p>
         </div>
 
         {/* Hero Offers Section */}
-        <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-xl p-6 mb-8 text-white">
-          <h3 className="text-2xl font-bold mb-2">Huge offers credited</h3>
-          <p className="text-lg opacity-90">Limited time deals on all categories</p>
+        <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8 text-white">
+          <h3 className="text-xl sm:text-2xl font-bold mb-2">Huge offers credited</h3>
+          <p className="text-sm sm:text-lg opacity-90">Limited time deals on all categories</p>
         </div>
 
         {/* Service Categories with Horizontal Scroll */}
@@ -436,19 +437,19 @@ export const ServicesGrid = () => {
         ))}
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+        <div className="text-center mt-8 sm:mt-12">
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 sm:p-8 text-white">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
               Need Custom Printing Solutions?
             </h3>
-            <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-lg opacity-90 mb-6 max-w-2xl mx-auto px-4">
               Contact us for personalized quotes and bulk pricing on any printing service
             </p>
             <Button 
               onClick={() => window.open('https://wa.me/919634877767?text=Hi! I need a custom printing solution.', '_blank')}
-              className="bg-white text-purple-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg text-lg"
+              className="bg-white text-purple-600 hover:bg-gray-100 font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-base sm:text-lg"
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Get Custom Quote
             </Button>
           </div>
