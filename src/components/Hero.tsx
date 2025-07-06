@@ -1,3 +1,4 @@
+
 import { Search, MapPin, Star, Phone, Mail } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -23,12 +24,11 @@ export const Hero = () => {
   }, []);
 
   const services = [
-    { title: "Business Cards", image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=200&fit=crop", popular: true },
-    { title: "Banner Printing", image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop", popular: false },
-    { title: "Wedding Cards", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop", popular: true },
-    { title: "Digital Printing", image: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=300&h=200&fit=crop", popular: false },
-    { title: "Photo Printing", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop", popular: false },
-    { title: "Flex Printing", image: "https://images.unsplash.com/photo-1516962126636-27ad087061cc?w=300&h=200&fit=crop", popular: true },
+    { title: "Flex Banner Printing", image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=200&fit=crop", popular: true },
+    { title: "Digital Printing", image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop", popular: false },
+    { title: "Offset Printing", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop", popular: true },
+    { title: "Digital Paper Printing", image: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=300&h=200&fit=crop", popular: false },
+    { title: "T-shirt Printing", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop", popular: false },
   ];
 
   const handleWhatsApp = () => {
@@ -92,7 +92,7 @@ export const Hero = () => {
           </Button>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {services.map((service, index) => (
             <Card 
               key={index}

@@ -111,10 +111,10 @@ const allServices = [
     category: "Digital Printing"
   },
   {
-    title: "Mesh Banner Print",
+    title: "Digital Banner Print",
     price: "₹30",
     unit: "per sq ft",
-    description: "Wind-resistant mesh banners for outdoor installations",
+    description: "High-quality digital banner prints for advertising",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
     category: "Digital Printing"
@@ -170,7 +170,7 @@ const allServices = [
     popular: true
   },
   {
-    title: "Marketing Brochures",
+    title: "Marketing Brochures - Coming Soon",
     price: "₹1,499+",
     unit: "for 950-1000 pieces",
     description: "Full-color brochures (8.5x11 inches) for marketing campaigns",
@@ -197,21 +197,12 @@ const allServices = [
     category: "Offset Printing"
   },
   {
-    title: "Custom Catalogs",
+    title: "Custom Catalogs - Coming Soon",
     price: "₹2,999+",
     unit: "for 500 pieces",
     description: "Multi-page product catalogs with professional binding",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-    category: "Offset Printing"
-  },
-  {
-    title: "Event Flyers",
-    price: "₹899+",
-    unit: "for 1000 pieces",
-    description: "Eye-catching flyers for events and promotions",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
     category: "Offset Printing"
   },
 
@@ -263,44 +254,6 @@ const allServices = [
     category: "Signage"
   },
 
-  // Stickers & Labels
-  {
-    title: "Custom Vinyl Stickers",
-    price: "₹5-15",
-    unit: "per piece",
-    description: "Waterproof vinyl stickers in any shape and size",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-    category: "Stickers"
-  },
-  {
-    title: "Product Labels",
-    price: "₹2-8",
-    unit: "per piece",
-    description: "Professional product labels with barcode support",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
-    category: "Stickers"
-  },
-  {
-    title: "Security Stickers",
-    price: "₹8-20",
-    unit: "per piece",
-    description: "Tamper-evident security labels and holographic stickers",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=400&h=300&fit=crop",
-    category: "Stickers"
-  },
-  {
-    title: "Transparent Stickers",
-    price: "₹6-12",
-    unit: "per piece",
-    description: "Clear transparent stickers for glass and smooth surfaces",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop",
-    category: "Stickers"
-  },
-
   // Digital Paper Printing
   {
     title: "Premium Letterhead Printing",
@@ -309,7 +262,7 @@ const allServices = [
     description: "High-quality letterhead printing on premium paper stock",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
-    category: "Paper Printing"
+    category: "Digital Paper Printing"
   },
   {
     title: "Custom Sticker Sheets",
@@ -318,7 +271,7 @@ const allServices = [
     description: "Multiple stickers printed on convenient sheets",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-    category: "Paper Printing"
+    category: "Digital Paper Printing"
   },
   {
     title: "Award Certificates",
@@ -327,26 +280,17 @@ const allServices = [
     description: "Professional certificates with gold foil options",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-    category: "Paper Printing"
+    category: "Digital Paper Printing"
   },
   {
-    title: "Wedding Invitations",
+    title: "Wedding Invitations - Coming Soon",
     price: "₹15-50",
     unit: "per invitation",
     description: "Elegant wedding invitations with custom designs",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
-    category: "Paper Printing",
+    category: "Digital Paper Printing",
     popular: true
-  },
-  {
-    title: "Business Proposals",
-    price: "₹25-40",
-    unit: "per page",
-    description: "Professional business proposals with binding",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-    category: "Paper Printing"
   },
 
   // T-Shirt & Apparel Printing
@@ -386,44 +330,6 @@ const allServices = [
     negotiable: true,
     image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop",
     category: "Apparel Printing"
-  },
-
-  // Photo Printing & Frames
-  {
-    title: "Photo Prints",
-    price: "₹5-25",
-    unit: "per photo",
-    description: "High-resolution photo prints in various sizes",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=400&h=300&fit=crop",
-    category: "Photo Printing"
-  },
-  {
-    title: "Canvas Photo Prints",
-    price: "₹500-2000",
-    unit: "per canvas",
-    description: "Premium canvas photo prints for home decoration",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=300&fit=crop",
-    category: "Photo Printing"
-  },
-  {
-    title: "Acrylic Photo Frames",
-    price: "₹200-800",
-    unit: "per frame",
-    description: "Modern acrylic frames for professional photo display",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-    category: "Photo Printing"
-  },
-  {
-    title: "Photo Albums",
-    price: "₹500-1500",
-    unit: "per album",
-    description: "Custom photo albums with professional binding",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-    category: "Photo Printing"
   }
 ];
 
@@ -498,7 +404,7 @@ export const ServicesGrid = () => {
     "Digital Printing": "Min. 25% Off", 
     "Offset Printing": "From ₹499",
     "Signage": "Min. 35% Off",
-    "Stickers": "Up to 50% Off",
+    "Digital Paper Printing": "From ₹350",
     "Apparel Printing": "From ₹150"
   };
 

@@ -44,7 +44,7 @@ export const BannerSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8">
           {banners.map((banner, index) => (
             <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white/80 backdrop-blur-sm border-0 relative">
               <div className="relative h-64 overflow-hidden">
@@ -78,19 +78,6 @@ export const BannerSection = () => {
               <div className={`absolute top-4 right-4 w-3 h-3 bg-gradient-to-r ${banner.gradient} rounded-full opacity-80 group-hover:scale-150 transition-transform duration-300`}></div>
             </Card>
           ))}
-        </div>
-
-        {/* New Banner Component for the third image */}
-        <div className="w-full">
-          <Card className="overflow-hidden bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 p-1">
-            <div className="bg-white rounded-lg overflow-hidden">
-              <img 
-                src="/lovable-uploads/d237a972-4404-4e22-b0c0-6c020ba095aa.png" 
-                alt="Rohila Graphics Banner"
-                className="w-full h-32 md:h-48 object-cover"
-              />
-            </div>
-          </Card>
         </div>
       </div>
     </section>
