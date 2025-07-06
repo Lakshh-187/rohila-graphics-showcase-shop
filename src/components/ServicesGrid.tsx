@@ -1,4 +1,3 @@
-
 import { ImageServiceCard } from "./ImageServiceCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -70,7 +69,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Durable vinyl prints for vehicle wraps and outdoor signage",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1516962126636-27ad087061cc?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
     category: "Digital Printing",
     popular: true
   },
@@ -145,7 +144,7 @@ const allServices = [
     unit: "per sq ft",
     description: "3D textured wallpapers for premium interior design",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1615873968403-89e068629265?w=400&h=300&fit=crop",
     category: "Wallpaper"
   },
   {
@@ -154,7 +153,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Custom photo wallpapers from your images",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
     category: "Wallpaper"
   },
 
@@ -165,7 +164,7 @@ const allServices = [
     unit: "for 950-1000 cards",
     description: "Professional business cards with various finishing options",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/a56a81f0-6086-492f-a98f-8bd1a69bf1f0.png",
     category: "Offset Printing",
     popular: true
   },
@@ -184,7 +183,7 @@ const allServices = [
     unit: "for 950-1000 pieces",
     description: "High-impact posters (18x22 inches) for advertising",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/86e6884a-1ff0-4d6d-92ab-e4d003b932eb.png",
     category: "Offset Printing"
   },
   {
@@ -193,7 +192,7 @@ const allServices = [
     unit: "for 1000 sheets",
     description: "Professional A4 letterheads with company branding",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/acb40429-2d58-478c-af9b-f24ec20209e9.png",
     category: "Offset Printing"
   },
   {
@@ -261,7 +260,7 @@ const allServices = [
     unit: "for 50 papers (A4)",
     description: "High-quality letterhead printing on premium paper stock",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/6124f148-3aa0-4758-b1c9-eee61ed37f56.png",
     category: "Digital Paper Printing"
   },
   {
@@ -270,7 +269,7 @@ const allServices = [
     unit: "for 15 sheets (12x18)",
     description: "Multiple stickers printed on convenient sheets",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/676e6dfe-07cc-49ce-a25c-5319ba4a040d.png",
     category: "Digital Paper Printing"
   },
   {
@@ -279,7 +278,7 @@ const allServices = [
     unit: "for 20 certificates (A4)",
     description: "Professional certificates with gold foil options",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/1eb489b3-5fe1-4649-b6a3-67bfd2cb5623.png",
     category: "Digital Paper Printing"
   },
   {
@@ -310,7 +309,7 @@ const allServices = [
     unit: "per piece",
     description: "Professional uniforms with company branding",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1556821840-3a9c6dcb0e66?w=400&h=300&fit=crop",
     category: "Apparel Printing"
   },
   {
@@ -319,7 +318,7 @@ const allServices = [
     unit: "per t-shirt",
     description: "Custom event t-shirts for conferences and festivals",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=400&h=300&fit=crop",
     category: "Apparel Printing"
   },
   {
@@ -328,7 +327,7 @@ const allServices = [
     unit: "per jersey",
     description: "Professional sports jerseys with numbers and names",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
     category: "Apparel Printing"
   }
 ];
