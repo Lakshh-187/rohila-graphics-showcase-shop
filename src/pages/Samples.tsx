@@ -4,74 +4,102 @@ import { ArrowRight, Download, Eye, Palette, ChevronLeft, ChevronRight, Filter }
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { SampleCard } from "@/components/SampleCard";
 
 const sampleCategories = [
   {
     title: "Business Cards",
     items: [
-      { id: 1, title: "Corporate Business Cards", designs: 25, thumbnail: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=200&fit=crop", popular: true, discount: "30% Off" },
-      { id: 2, title: "Creative Business Cards", designs: 18, thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=200&fit=crop", discount: "25% Off" },
-      { id: 3, title: "Minimalist Cards", designs: 22, thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop" },
-      { id: 4, title: "Luxury Business Cards", designs: 15, thumbnail: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=300&h=200&fit=crop", popular: true },
-      { id: 5, title: "Modern Cards", designs: 20, thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=200&fit=crop" },
+      { 
+        id: 1, 
+        title: "Visiting Card Collection", 
+        designs: 50, 
+        thumbnail: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=200&fit=crop", 
+        popular: true, 
+        discount: "Premium Quality",
+        driveLink: "https://drive.google.com/drive/folders/1E58lbgWMGxRaLlKtwihC3ELPCeRq_MCB?usp=sharing"
+      },
+    ]
+  },
+  {
+    title: "Letterheads & Stationery",
+    items: [
+      { 
+        id: 2, 
+        title: "Professional Letterheads", 
+        designs: 30, 
+        thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop", 
+        popular: true,
+        driveLink: "https://drive.google.com/drive/folders/1BF_b_SvG1s7Ajg6D73L6lY7bDPG1uCjZ?usp=sharing"
+      },
+    ]
+  },
+  {
+    title: "Bill Books & Invoices",
+    items: [
+      { 
+        id: 3, 
+        title: "Custom Bill Books", 
+        designs: 25, 
+        thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop", 
+        discount: "GST Ready",
+        driveLink: "https://drive.google.com/drive/folders/1oyyum2RxHBZ_rAFO5UKN-jtJwkf_Pjd1?usp=sharing"
+      },
+    ]
+  },
+  {
+    title: "Banners & Hoardings",
+    items: [
+      { 
+        id: 4, 
+        title: "Banner & Board Collection", 
+        designs: 40, 
+        thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop", 
+        popular: true, 
+        discount: "All Sizes",
+        driveLink: "https://drive.google.com/drive/folders/1RXAMLI_L4xQJHhFwreOWJkq-ZW8fbmQI?usp=sharing"
+      },
+    ]
+  },
+  {
+    title: "Wallpapers & Decor",
+    items: [
+      { 
+        id: 5, 
+        title: "Custom Wallpapers", 
+        designs: 35, 
+        thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop", 
+        discount: "HD Quality",
+        driveLink: "https://drive.google.com/drive/folders/1ExcQVNT757raRO-9OJVqRvRbnXRWTwHD?usp=sharing"
+      },
     ]
   },
   {
     title: "Wedding Invitations",
     items: [
-      { id: 6, title: "Traditional Wedding Cards", designs: 30, thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop", popular: true, discount: "40% Off" },
-      { id: 7, title: "Modern Wedding Invites", designs: 25, thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop" },
-      { id: 8, title: "Floral Wedding Cards", designs: 28, thumbnail: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=200&fit=crop", discount: "35% Off" },
-      { id: 9, title: "Elegant Invitations", designs: 20, thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop" },
+      { id: 6, title: "Traditional Wedding Cards", designs: 30, thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop", comingSoon: true },
+      { id: 7, title: "Modern Wedding Invites", designs: 25, thumbnail: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=200&fit=crop", comingSoon: true },
     ]
   },
   {
     title: "Brochures & Flyers",
     items: [
-      { id: 10, title: "Corporate Brochures", designs: 20, thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop", discount: "20% Off" },
-      { id: 11, title: "Event Flyers", designs: 35, thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop", popular: true },
-      { id: 12, title: "Product Catalogs", designs: 22, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop" },
-      { id: 13, title: "Restaurant Menus", designs: 18, thumbnail: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=200&fit=crop", discount: "15% Off" },
-    ]
-  },
-  {
-    title: "Banners & Signage",
-    items: [
-      { id: 14, title: "Event Banners", designs: 18, thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop", popular: true, discount: "50% Off" },
-      { id: 15, title: "Store Signage", designs: 25, thumbnail: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" },
-      { id: 16, title: "Trade Show Displays", designs: 16, thumbnail: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=300&h=200&fit=crop", discount: "30% Off" },
-      { id: 17, title: "Promotional Banners", designs: 22, thumbnail: "https://images.unsplash.com/photo-1516962126636-27ad087061cc?w=300&h=200&fit=crop" },
+      { id: 8, title: "Corporate Brochures", designs: 20, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop", comingSoon: true },
+      { id: 9, title: "Event Flyers", designs: 35, thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop", comingSoon: true },
     ]
   },
   {
     title: "Stickers & Labels",
     items: [
-      { id: 18, title: "Product Stickers", designs: 40, thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop", popular: true, discount: "60% Off" },
-      { id: 19, title: "Custom Labels", designs: 35, thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop" },
-      { id: 20, title: "Brand Stickers", designs: 28, thumbnail: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=300&h=200&fit=crop", discount: "45% Off" },
+      { id: 10, title: "Product Stickers", designs: 40, thumbnail: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=300&h=200&fit=crop", comingSoon: true },
+      { id: 11, title: "Custom Labels", designs: 35, thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop", comingSoon: true },
     ]
   },
   {
     title: "T-Shirt Designs",
     items: [
-      { id: 21, title: "Custom T-Shirts", designs: 32, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", popular: true, discount: "From ₹150" },
-      { id: 22, title: "Corporate T-Shirts", designs: 20, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop" },
-      { id: 23, title: "Event T-Shirts", designs: 25, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", discount: "From ₹120" },
-    ]
-  },
-  {
-    title: "Photo Prints",
-    items: [
-      { id: 24, title: "Canvas Prints", designs: 15, thumbnail: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=200&fit=crop", discount: "From ₹500" },
-      { id: 25, title: "Photo Albums", designs: 12, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop", popular: true },
-      { id: 26, title: "Wall Frames", designs: 18, thumbnail: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=200&fit=crop" },
-    ]
-  },
-  {
-    title: "Certificates & Awards",
-    items: [
-      { id: 27, title: "Achievement Certificates", designs: 20, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop", discount: "From ₹450" },
-      { id: 28, title: "Award Templates", designs: 15, thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop" },
+      { id: 12, title: "Custom T-Shirts", designs: 32, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", comingSoon: true },
+      { id: 13, title: "Corporate T-Shirts", designs: 20, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", comingSoon: true },
     ]
   }
 ];
@@ -126,44 +154,17 @@ const ScrollableSection = ({ title, items, discount }: { title: string; items: a
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {items.map((item) => (
-          <Card key={item.id} className="flex-none w-40 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-            <div className="relative">
-              <img 
-                src={item.thumbnail} 
-                alt={item.title}
-                className="w-full h-24 object-cover"
-              />
-              {item.popular && (
-                <Badge className="absolute top-1 left-1 bg-red-500 text-white text-xs px-1 py-0.5">
-                  Popular
-                </Badge>
-              )}
-              {item.discount && (
-                <Badge className="absolute top-1 right-1 bg-green-500 text-white text-xs px-1 py-0.5">
-                  {item.discount}
-                </Badge>
-              )}
-            </div>
-            
-            <CardContent className="p-3">
-              <h4 className="font-semibold text-xs text-gray-800 mb-1 line-clamp-2 leading-tight">
-                {item.title}
-              </h4>
-              <div className="flex items-center justify-between text-xs text-gray-600 mb-2">
-                <span className="font-medium">{item.designs} designs</span>
-                <Button size="sm" variant="ghost" className="h-6 w-6 p-0">
-                  <Eye className="w-3 h-3" />
-                </Button>
-              </div>
-              <Button 
-                size="sm"
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white text-xs py-1"
-              >
-                <Download className="w-3 h-3 mr-1" />
-                Download
-              </Button>
-            </CardContent>
-          </Card>
+          <SampleCard
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            designs={item.designs}
+            thumbnail={item.thumbnail}
+            popular={item.popular}
+            discount={item.discount}
+            comingSoon={item.comingSoon}
+            driveLink={item.driveLink}
+          />
         ))}
       </div>
     </div>
@@ -172,7 +173,18 @@ const ScrollableSection = ({ title, items, discount }: { title: string; items: a
 
 const Samples = () => {
   const [selectedFilter, setSelectedFilter] = useState("All");
-  const filters = ["All", "Popular", "New", "Business", "Wedding", "Corporate"];
+  const filters = ["All", "Available", "Coming Soon", "Popular"];
+
+  const filteredCategories = sampleCategories.map(category => ({
+    ...category,
+    items: category.items.filter(item => {
+      if (selectedFilter === "All") return true;
+      if (selectedFilter === "Available") return !item.comingSoon;
+      if (selectedFilter === "Coming Soon") return item.comingSoon;
+      if (selectedFilter === "Popular") return item.popular;
+      return true;
+    })
+  })).filter(category => category.items.length > 0);
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
@@ -189,14 +201,14 @@ const Samples = () => {
             Design Sample Library
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Browse 40+ design e-books with thousands of templates for all your printing needs
+            Browse our extensive collection of professional design templates with direct access to sample galleries
           </p>
         </div>
 
-        {/* Huge Offers Section */}
+        {/* Announcement Banner */}
         <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-xl p-6 mb-8 text-white">
-          <h2 className="text-xl md:text-2xl font-bold mb-2">Huge offers credited</h2>
-          <p className="text-base opacity-90">Limited time discounts on all design categories</p>
+          <h2 className="text-xl md:text-2xl font-bold mb-2">New Sample Collections Available!</h2>
+          <p className="text-base opacity-90">Access professional design samples directly from our Google Drive galleries</p>
         </div>
 
         {/* Filter Tabs */}
@@ -216,34 +228,33 @@ const Samples = () => {
         </div>
 
         {/* Sample Categories */}
-        {sampleCategories.map((category) => (
+        {filteredCategories.map((category) => (
           <ScrollableSection
             key={category.title}
             title={category.title}
             items={category.items}
-            discount={category.title === "Stickers & Labels" ? "Up to 60% Off" : 
-                     category.title === "Wedding Invitations" ? "Up to 40% Off" :
-                     category.title === "T-Shirt Designs" ? "From ₹120" : undefined}
+            discount={category.title === "Business Cards" ? "Premium Quality" : 
+                     category.title === "Banners & Hoardings" ? "All Sizes Available" : undefined}
           />
         ))}
 
         {/* Bottom Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
           <div className="text-center bg-white rounded-lg p-4 shadow-sm">
-            <div className="text-2xl font-bold text-purple-600">40+</div>
-            <div className="text-sm text-gray-600">E-books</div>
+            <div className="text-2xl font-bold text-purple-600">5</div>
+            <div className="text-sm text-gray-600">Categories Available</div>
           </div>
           <div className="text-center bg-white rounded-lg p-4 shadow-sm">
-            <div className="text-2xl font-bold text-pink-600">1000+</div>
-            <div className="text-sm text-gray-600">Templates</div>
+            <div className="text-2xl font-bold text-pink-600">180+</div>
+            <div className="text-sm text-gray-600">Sample Designs</div>
           </div>
           <div className="text-center bg-white rounded-lg p-4 shadow-sm">
-            <div className="text-2xl font-bold text-red-600">8</div>
-            <div className="text-sm text-gray-600">Categories</div>
+            <div className="text-2xl font-bold text-red-600">9</div>
+            <div className="text-sm text-gray-600">Total Categories</div>
           </div>
           <div className="text-center bg-white rounded-lg p-4 shadow-sm">
             <div className="text-2xl font-bold text-green-600">Free</div>
-            <div className="text-sm text-gray-600">Downloads</div>
+            <div className="text-sm text-gray-600">Access</div>
           </div>
         </div>
       </div>
