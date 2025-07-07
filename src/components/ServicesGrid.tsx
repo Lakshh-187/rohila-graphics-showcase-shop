@@ -1,8 +1,7 @@
-
 import { ImageServiceCard } from "./ImageServiceCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { MessageCircle, ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { useRef } from "react";
 
 const allServices = [
@@ -206,52 +205,56 @@ const allServices = [
     category: "Offset Printing"
   },
 
-  // Boards & Signage
+  // Boards & Signage - Coming Soon
   {
-    title: "LED Advertisement Board",
+    title: "LED Advertisement Board - Coming Soon",
     price: "₹25-65",
     unit: "per sq ft",
-    description: "Modern LED signage boards with custom designs and fittings",
+    description: "Modern LED signage boards with custom designs - Available Soon",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
-    category: "Signage",
-    popular: true
+    category: "Signage (Coming Soon)",
+    comingSoon: true
   },
   {
-    title: "Premium Glow Sign Board",
+    title: "Premium Glow Sign Board - Coming Soon",
     price: "₹150-300",
     unit: "per sq ft",
-    description: "Illuminated signage with energy-efficient LED lighting",
+    description: "Illuminated signage with energy-efficient LED lighting - Available Soon",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
-    category: "Signage"
+    category: "Signage (Coming Soon)",
+    comingSoon: true
   },
   {
-    title: "Acrylic Sign Boards",
+    title: "Acrylic Sign Boards - Coming Soon",
     price: "₹80-150",
     unit: "per sq ft",
-    description: "Premium acrylic boards with laser cutting and engraving",
+    description: "Premium acrylic boards with laser cutting and engraving - Available Soon",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-    category: "Signage"
+    category: "Signage (Coming Soon)",
+    comingSoon: true
   },
   {
-    title: "Metal Sign Boards",
+    title: "Metal Sign Boards - Coming Soon",
     price: "₹120-250",
     unit: "per sq ft",
-    description: "Durable metal signage for industrial and commercial use",
+    description: "Durable metal signage for industrial and commercial use - Available Soon",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=400&h=300&fit=crop",
-    category: "Signage"
+    category: "Signage (Coming Soon)",
+    comingSoon: true
   },
   {
-    title: "Digital Display Boards",
+    title: "Digital Display Boards - Coming Soon",
     price: "₹500-1000",
     unit: "per sq ft",
-    description: "Interactive digital displays for modern advertising",
+    description: "Interactive digital displays for modern advertising - Available Soon",
     negotiable: true,
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
-    category: "Signage"
+    category: "Signage (Coming Soon)",
+    comingSoon: true
   },
 
   // Digital Paper Printing
@@ -333,7 +336,7 @@ const allServices = [
   }
 ];
 
-const ScrollableSection = ({ title, services, discount }: { title: string; services: any[]; discount?: string }) => {
+const ScrollableSection = ({ title, services, discount, comingSoon }: { title: string; services: any[]; discount?: string; comingSoon?: boolean }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -351,7 +354,13 @@ const ScrollableSection = ({ title, services, discount }: { title: string; servi
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">{title}</h3>
-          {discount && (
+          {comingSoon && (
+            <Badge className="bg-orange-500 text-white px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold">
+              <Clock className="w-3 h-3 mr-1" />
+              Coming Soon
+            </Badge>
+          )}
+          {discount && !comingSoon && (
             <Badge className="bg-green-500 text-white px-2 sm:px-3 py-1 text-xs sm:text-sm font-semibold">
               {discount}
             </Badge>
@@ -403,7 +412,7 @@ export const ServicesGrid = () => {
     "Flex Printing": "Up to 30% Off",
     "Digital Printing": "Min. 25% Off", 
     "Offset Printing": "From ₹499",
-    "Signage": "Min. 35% Off",
+    "Signage (Coming Soon)": undefined,
     "Digital Paper Printing": "From ₹350",
     "Apparel Printing": "From ₹150"
   };
@@ -433,6 +442,7 @@ export const ServicesGrid = () => {
             title={category}
             services={services}
             discount={discounts[category as keyof typeof discounts]}
+            comingSoon={category.includes("Coming Soon")}
           />
         ))}
 

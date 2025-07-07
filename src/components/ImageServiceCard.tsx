@@ -1,5 +1,5 @@
 
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -12,6 +12,7 @@ interface ImageServiceCardProps {
   image: string;
   category: string;
   popular?: boolean;
+  comingSoon?: boolean;
 }
 
 export const ImageServiceCard = ({ 
@@ -22,24 +23,33 @@ export const ImageServiceCard = ({
   negotiable, 
   image, 
   category, 
-  popular 
+  popular,
+  comingSoon 
 }: ImageServiceCardProps) => {
   const handleWhatsApp = () => {
-    const message = encodeURIComponent(`Hi! I'm interested in ${title}. Can you provide more details about pricing and availability?`);
+    const message = comingSoon 
+      ? encodeURIComponent(`Hi! I'm interested in ${title}. When will this service be available?`)
+      : encodeURIComponent(`Hi! I'm interested in ${title}. Can you provide more details about pricing and availability?`);
     window.open(`https://wa.me/919634877767?text=${message}`, '_blank');
   };
 
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border-0 shadow-md overflow-hidden h-full">
+    <Card className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border-0 shadow-md overflow-hidden h-full ${comingSoon ? 'opacity-90' : ''}`}>
       <div className="relative h-36 sm:h-48 overflow-hidden">
         <img 
           src={image} 
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${comingSoon ? 'grayscale-[50%]' : ''}`}
         />
-        {popular && (
+        {popular && !comingSoon && (
           <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
             Popular
+          </div>
+        )}
+        {comingSoon && (
+          <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-semibold flex items-center gap-1">
+            <Clock className="w-3 h-3" />
+            Coming Soon
           </div>
         )}
       </div>
@@ -57,15 +67,21 @@ export const ImageServiceCard = ({
         
         <div className="flex items-center justify-between">
           <div className="flex-1">
-            <span className="text-lg sm:text-2xl font-bold text-blue-600">{price}</span>
+            <span className={`text-lg sm:text-2xl font-bold ${comingSoon ? 'text-gray-500' : 'text-blue-600'}`}>
+              {price}
+            </span>
             <span className="text-xs sm:text-sm text-gray-500 ml-1 block sm:inline">{unit}</span>
           </div>
           <Button 
             onClick={handleWhatsApp}
             size="icon"
-            className="bg-green-500 hover:bg-green-600 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 ml-2"
+            className={`${comingSoon ? 'bg-orange-500 hover:bg-orange-600' : 'bg-green-500 hover:bg-green-600'} text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 ml-2`}
           >
-            <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+            {comingSoon ? (
+              <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
+            ) : (
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+            )}
           </Button>
         </div>
       </CardContent>

@@ -61,6 +61,88 @@ export const Hero = () => {
         </div>
       </div>
 
+      {/* Hero Section with Business Image */}
+      <section className="relative py-8 sm:py-12 lg:py-16 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
+              <div className="space-y-4">
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold">
+                  <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
+                    Professional
+                  </span>
+                  <br />
+                  <span className="text-gray-800">Printing Solutions</span>
+                </h1>
+                <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0">
+                  From flex banners to premium digital prints - we deliver quality that speaks for your brand
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button 
+                  onClick={handleWhatsApp}
+                  className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-3 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Get Quote Now
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={() => navigate('/samples')}
+                  className="border-2 border-purple-500 text-purple-600 hover:bg-purple-50 px-8 py-3 text-lg rounded-xl transition-all duration-300"
+                >
+                  View Portfolio
+                </Button>
+              </div>
+
+              {/* Features */}
+              <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="text-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Star className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
+                  </div>
+                  <p className="text-sm sm:text-base font-semibold text-gray-800">Premium Quality</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-pink-600" />
+                  </div>
+                  <p className="text-sm sm:text-base font-semibold text-gray-800">24/7 Support</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-red-600" />
+                  </div>
+                  <p className="text-sm sm:text-base font-semibold text-gray-800">Fast Delivery</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img 
+                  src="/lovable-uploads/cc566479-1e40-44b6-846a-27a9827d8d35.png" 
+                  alt="Rohila Graphics Store Front"
+                  className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <h3 className="text-lg sm:text-xl font-bold mb-1">Rohila Graphics</h3>
+                  <p className="text-sm sm:text-base opacity-90">Digital Printing & Large Format Solutions</p>
+                </div>
+              </div>
+              
+              {/* Floating Badge */}
+              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                GSTIN: 09AXGPK8237N1ZS
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Search Section */}
       <div className="container mx-auto px-4 py-4 sm:py-6">
         <div className="relative">
@@ -152,36 +234,6 @@ export const Hero = () => {
               </Button>
             </div>
           </Card>
-        </div>
-      </div>
-
-      {/* Features */}
-      <div className="container mx-auto px-4 pb-6 sm:pb-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          <div className="text-center p-3 sm:p-4">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <Star className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
-            </div>
-            <h5 className="font-medium text-xs sm:text-sm">Premium Quality</h5>
-          </div>
-          <div className="text-center p-3 sm:p-4">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-pink-600" />
-            </div>
-            <h5 className="font-medium text-xs sm:text-sm">24/7 Support</h5>
-          </div>
-          <div className="text-center p-3 sm:p-4">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" />
-            </div>
-            <h5 className="font-medium text-xs sm:text-sm">Fast Delivery</h5>
-          </div>
-          <div className="text-center p-3 sm:p-4">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
-            </div>
-            <h5 className="font-medium text-xs sm:text-sm">Local Service</h5>
-          </div>
         </div>
       </div>
     </div>

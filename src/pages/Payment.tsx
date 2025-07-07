@@ -71,11 +71,37 @@ const Payment = () => {
 
             {/* Payment Options */}
             <div className="space-y-6">
+              {/* PhonePe QR Scanner */}
+              <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-purple-50 to-indigo-50">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3 text-purple-800">
+                    <QrCode className="w-6 h-6" />
+                    PhonePe QR Payment
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="bg-white p-4 rounded-lg border-2 border-purple-200 text-center">
+                    <div className="max-w-sm mx-auto">
+                      <img 
+                        src="/lovable-uploads/8471b8cb-097c-4e07-addd-f3060ccebf03.png" 
+                        alt="PhonePe QR Code Scanner"
+                        className="w-full h-auto rounded-lg shadow-md"
+                      />
+                    </div>
+                    <div className="mt-4 space-y-2">
+                      <p className="font-bold text-lg text-purple-800">Scan & Pay with any UPI App</p>
+                      <p className="text-gray-600">UPI ID: Q864531255@ybl</p>
+                      <p className="text-sm text-gray-500">Rohila graphics</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
               <Card className="hover:shadow-xl transition-shadow bg-gradient-to-br from-green-50 to-blue-50">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-green-800">
                     <QrCode className="w-6 h-6" />
-                    Digital Payment
+                    Other Digital Payment
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
