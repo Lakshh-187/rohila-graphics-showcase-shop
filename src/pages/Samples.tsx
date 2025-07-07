@@ -1,3 +1,4 @@
+
 import { useState, useRef } from "react";
 import { ArrowRight, Download, Eye, Palette, ChevronLeft, ChevronRight, Filter } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -179,8 +180,8 @@ const Samples = () => {
     items: category.items.filter(item => {
       if (selectedFilter === "All") return true;
       if (selectedFilter === "Available") return !item.comingSoon;
-      if (selectedFilter === "Coming Soon") return item.comingSoon === true;
-      if (selectedFilter === "Popular") return item.popular === true;
+      if (selectedFilter === "Coming Soon") return Boolean(item.comingSoon);
+      if (selectedFilter === "Popular") return Boolean(item.popular);
       return true;
     })
   })).filter(category => category.items.length > 0);
