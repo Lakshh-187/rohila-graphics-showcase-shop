@@ -17,7 +17,8 @@ const sampleCategories = [
         thumbnail: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=200&fit=crop", 
         popular: true, 
         discount: "Premium Quality",
-        driveLink: "https://drive.google.com/drive/folders/1E58lbgWMGxRaLlKtwihC3ELPCeRq_MCB?usp=sharing"
+        driveLink: "https://drive.google.com/drive/folders/1E58lbgWMGxRaLlKtwihC3ELPCeRq_MCB?usp=sharing",
+        comingSoon: false
       },
     ]
   },
@@ -30,7 +31,8 @@ const sampleCategories = [
         designs: 30, 
         thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop", 
         popular: true,
-        driveLink: "https://drive.google.com/drive/folders/1BF_b_SvG1s7Ajg6D73L6lY7bDPG1uCjZ?usp=sharing"
+        driveLink: "https://drive.google.com/drive/folders/1BF_b_SvG1s7Ajg6D73L6lY7bDPG1uCjZ?usp=sharing",
+        comingSoon: false
       },
     ]
   },
@@ -43,7 +45,9 @@ const sampleCategories = [
         designs: 25, 
         thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop", 
         discount: "GST Ready",
-        driveLink: "https://drive.google.com/drive/folders/1oyyum2RxHBZ_rAFO5UKN-jtJwkf_Pjd1?usp=sharing"
+        driveLink: "https://drive.google.com/drive/folders/1oyyum2RxHBZ_rAFO5UKN-jtJwkf_Pjd1?usp=sharing",
+        popular: false,
+        comingSoon: false
       },
     ]
   },
@@ -57,7 +61,8 @@ const sampleCategories = [
         thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop", 
         popular: true, 
         discount: "All Sizes",
-        driveLink: "https://drive.google.com/drive/folders/1RXAMLI_L4xQJHhFwreOWJkq-ZW8fbmQI?usp=sharing"
+        driveLink: "https://drive.google.com/drive/folders/1RXAMLI_L4xQJHhFwreOWJkq-ZW8fbmQI?usp=sharing",
+        comingSoon: false
       },
     ]
   },
@@ -70,36 +75,38 @@ const sampleCategories = [
         designs: 35, 
         thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop", 
         discount: "HD Quality",
-        driveLink: "https://drive.google.com/drive/folders/1ExcQVNT757raRO-9OJVqRvRbnXRWTwHD?usp=sharing"
+        driveLink: "https://drive.google.com/drive/folders/1ExcQVNT757raRO-9OJVqRvRbnXRWTwHD?usp=sharing",
+        popular: false,
+        comingSoon: false
       },
     ]
   },
   {
     title: "Wedding Invitations",
     items: [
-      { id: 6, title: "Traditional Wedding Cards", designs: 30, thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop", comingSoon: true },
-      { id: 7, title: "Modern Wedding Invites", designs: 25, thumbnail: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=200&fit=crop", comingSoon: true },
+      { id: 6, title: "Traditional Wedding Cards", designs: 30, thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop", comingSoon: true, popular: false },
+      { id: 7, title: "Modern Wedding Invites", designs: 25, thumbnail: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=200&fit=crop", comingSoon: true, popular: false },
     ]
   },
   {
     title: "Brochures & Flyers",
     items: [
-      { id: 8, title: "Corporate Brochures", designs: 20, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop", comingSoon: true },
-      { id: 9, title: "Event Flyers", designs: 35, thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop", comingSoon: true },
+      { id: 8, title: "Corporate Brochures", designs: 20, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop", comingSoon: true, popular: false },
+      { id: 9, title: "Event Flyers", designs: 35, thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop", comingSoon: true, popular: false },
     ]
   },
   {
     title: "Stickers & Labels",
     items: [
-      { id: 10, title: "Product Stickers", designs: 40, thumbnail: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=300&h=200&fit=crop", comingSoon: true },
-      { id: 11, title: "Custom Labels", designs: 35, thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop", comingSoon: true },
+      { id: 10, title: "Product Stickers", designs: 40, thumbnail: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=300&h=200&fit=crop", comingSoon: true, popular: false },
+      { id: 11, title: "Custom Labels", designs: 35, thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop", comingSoon: true, popular: false },
     ]
   },
   {
     title: "T-Shirt Designs",
     items: [
-      { id: 12, title: "Custom T-Shirts", designs: 32, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", comingSoon: true },
-      { id: 13, title: "Corporate T-Shirts", designs: 20, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", comingSoon: true },
+      { id: 12, title: "Custom T-Shirts", designs: 32, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", comingSoon: true, popular: false },
+      { id: 13, title: "Corporate T-Shirts", designs: 20, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", comingSoon: true, popular: false },
     ]
   }
 ];
@@ -180,8 +187,8 @@ const Samples = () => {
     items: category.items.filter(item => {
       if (selectedFilter === "All") return true;
       if (selectedFilter === "Available") return !item.comingSoon;
-      if (selectedFilter === "Coming Soon") return Boolean(item.comingSoon);
-      if (selectedFilter === "Popular") return Boolean(item.popular);
+      if (selectedFilter === "Coming Soon") return item.comingSoon;
+      if (selectedFilter === "Popular") return item.popular;
       return true;
     })
   })).filter(category => category.items.length > 0);
