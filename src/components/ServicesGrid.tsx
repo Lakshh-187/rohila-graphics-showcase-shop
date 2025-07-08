@@ -17,7 +17,7 @@ const allServices = [
     popular: true
   },
   {
-    title: "Premium Black Star Banner",
+    title: "Hoarding ",
     price: "₹12",
     unit: "per sq ft", 
     description: "Enhanced durability banner with superior weather resistance",
@@ -31,34 +31,26 @@ const allServices = [
     unit: "per sq ft",
     description: "Premium quality banner with excellent color reproduction",
     negotiable: true,
-    image: "/lovable-uploads/ca612801-ab84-4543-9850-87eee6aa5035.png",
+    image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png",
+    category: "Flex Printing"
+  },
+  
+  {
+    title: "Black Star Banner (220 GSM)",
+    price: "₹15",
+    unit: "per sq ft",
+    description: "Premium quality banner with excellent color reproduction",
+    negotiable: true,
+    image: "https://i.ibb.co/jvskVdQD/image.png",
     category: "Flex Printing"
   },
   {
-    title: "Heavy Duty White Star (310 GSM)",
-    price: "₹25",
+    title: "Sign Board ",
+    price: "₹15",
     unit: "per sq ft",
-    description: "Industrial grade banner for long-term outdoor installations",
+    description: "Premium quality banner with excellent color reproduction",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=400&h=300&fit=crop",
-    category: "Flex Printing"
-  },
-  {
-    title: "Back Light Banner (410 GSM)",
-    price: "₹35",
-    unit: "per sq ft",
-    description: "Translucent banner perfect for illuminated sign displays",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
-    category: "Flex Printing"
-  },
-  {
-    title: "Premium Retro Banner (440 GSM)",
-    price: "₹45",
-    unit: "per sq ft",
-    description: "Top-tier banner material for premium advertising needs",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop",
+    image: "https://i.ibb.co/svfr6bn8/image.png",
     category: "Flex Printing"
   },
 
@@ -79,29 +71,21 @@ const allServices = [
     unit: "per sq ft",
     description: "See-through window graphics for storefronts and vehicles",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/0bc6f65d-821c-4c64-b073-c44552268199.png",
     category: "Digital Printing"
   },
-  {
-    title: "Crystal Clear Transparent Print",
-    price: "₹35",
-    unit: "per sq ft",
-    description: "High-resolution transparent prints for glass applications",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop",
-    category: "Digital Printing"
-  },
+
   {
     title: "Premium Retro Vinyl",
     price: "₹50",
     unit: "per sq ft",
     description: "Luxury vinyl with special retro finish and texture",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+    image: "https://i.ibb.co/0j4dzRtZ/image.png",
     category: "Digital Printing"
   },
   {
-    title: "Canvas Print",
+    title: "VINYL",
     price: "₹55",
     unit: "per sq ft",
     description: "Artistic canvas prints for interior decoration",
@@ -109,15 +93,7 @@ const allServices = [
     image: "/lovable-uploads/bbae2d16-0375-4e01-bc75-b2e2e73c8c5f.png",
     category: "Digital Printing"
   },
-  {
-    title: "Digital Banner Print",
-    price: "₹30",
-    unit: "per sq ft",
-    description: "High-quality digital banner prints for advertising",
-    negotiable: true,
-    image: "/lovable-uploads/0bc6f65d-821c-4c64-b073-c44552268199.png",
-    category: "Digital Printing"
-  },
+ 
 
   // Wallpaper Solutions
   {
@@ -159,7 +135,7 @@ const allServices = [
 
   // Offset Printing
   {
-    title: "Premium Business Cards",
+    title: "Visiting Business Cards",
     price: "₹500+",
     unit: "for 950-1000 cards",
     description: "Professional business cards with various finishing options",
@@ -169,12 +145,12 @@ const allServices = [
     popular: true
   },
   {
-    title: "Marketing Brochures - Coming Soon",
+    title: "Pamplets",
     price: "₹1,499+",
     unit: "for 950-1000 pieces",
     description: "Full-color brochures (8.5x11 inches) for marketing campaigns",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
+    image: "https://i.ibb.co/Xr4gNjM7/image.png",
     category: "Offset Printing"
   },
   {
@@ -195,15 +171,7 @@ const allServices = [
     image: "/lovable-uploads/acb40429-2d58-478c-af9b-f24ec20209e9.png",
     category: "Offset Printing"
   },
-  {
-    title: "Custom Catalogs - Coming Soon",
-    price: "₹2,999+",
-    unit: "for 500 pieces",
-    description: "Multi-page product catalogs with professional binding",
-    negotiable: true,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-    category: "Offset Printing"
-  },
+
 
   // Boards & Signage - Coming Soon
   {

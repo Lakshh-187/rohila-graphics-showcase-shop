@@ -9,7 +9,7 @@ export const BusinessCarousel = () => {
   const businessImages = [
     {
       id: 1,
-      image: "/lovable-uploads/3aa23568-9de2-4000-a7aa-994869878045.png",
+      image: "/lovable-uploads/0da165e7-bfe5-42e4-89de-4a5c597feece.png",
       title: "Large Format Printing",
       description: "High-quality poster printing"
     },
