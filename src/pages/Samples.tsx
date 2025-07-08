@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import { ArrowRight, Download, Eye, Palette, ChevronLeft, ChevronRight, Filter } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,7 +13,7 @@ const sampleCategories = [
         id: 1, 
         title: "Visiting Card Collection", 
         designs: 50, 
-        thumbnail: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=300&h=200&fit=crop", 
+        thumbnail: "/lovable-uploads/a56a81f0-6086-492f-a98f-8bd1a69bf1f0.png", 
         popular: true, 
         discount: "Premium Quality",
         driveLink: "https://drive.google.com/drive/folders/1E58lbgWMGxRaLlKtwihC3ELPCeRq_MCB?usp=sharing",
@@ -29,7 +28,7 @@ const sampleCategories = [
         id: 2, 
         title: "Professional Letterheads", 
         designs: 30, 
-        thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop", 
+        thumbnail: "/lovable-uploads/acb40429-2d58-478c-af9b-f24ec20209e9.png", 
         popular: true,
         driveLink: "https://drive.google.com/drive/folders/1BF_b_SvG1s7Ajg6D73L6lY7bDPG1uCjZ?usp=sharing",
         comingSoon: false
@@ -43,7 +42,7 @@ const sampleCategories = [
         id: 3, 
         title: "Custom Bill Books", 
         designs: 25, 
-        thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop", 
+        thumbnail: "/lovable-uploads/86e6884a-1ff0-4d6d-92ab-e4d003b932eb.png", 
         discount: "GST Ready",
         driveLink: "https://drive.google.com/drive/folders/1oyyum2RxHBZ_rAFO5UKN-jtJwkf_Pjd1?usp=sharing",
         popular: false,
@@ -58,7 +57,7 @@ const sampleCategories = [
         id: 4, 
         title: "Banner & Board Collection", 
         designs: 40, 
-        thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop", 
+        thumbnail: "/lovable-uploads/70522788-fd14-40e9-9758-c7707e074864.png", 
         popular: true, 
         discount: "All Sizes",
         driveLink: "https://drive.google.com/drive/folders/1RXAMLI_L4xQJHhFwreOWJkq-ZW8fbmQI?usp=sharing",
@@ -73,7 +72,7 @@ const sampleCategories = [
         id: 5, 
         title: "Custom Wallpapers", 
         designs: 35, 
-        thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop", 
+        thumbnail: "/lovable-uploads/04e04c57-e0ff-4359-a7ce-4ccab6f420f8.png", 
         discount: "HD Quality",
         driveLink: "https://drive.google.com/drive/folders/1ExcQVNT757raRO-9OJVqRvRbnXRWTwHD?usp=sharing",
         popular: false,
@@ -84,29 +83,29 @@ const sampleCategories = [
   {
     title: "Wedding Invitations",
     items: [
-      { id: 6, title: "Traditional Wedding Cards", designs: 30, thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop", comingSoon: true, popular: false },
-      { id: 7, title: "Modern Wedding Invites", designs: 25, thumbnail: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=200&fit=crop", comingSoon: true, popular: false },
+      { id: 6, title: "Traditional Wedding Cards", designs: 30, thumbnail: "/lovable-uploads/1eb489b3-5fe1-4649-b6a3-67bfd2cb5623.png", comingSoon: true, popular: false },
+      { id: 7, title: "Modern Wedding Invites", designs: 25, thumbnail: "/lovable-uploads/1eb489b3-5fe1-4649-b6a3-67bfd2cb5623.png", comingSoon: true, popular: false },
     ]
   },
   {
     title: "Brochures & Flyers",
     items: [
-      { id: 8, title: "Corporate Brochures", designs: 20, thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop", comingSoon: true, popular: false },
-      { id: 9, title: "Event Flyers", designs: 35, thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop", comingSoon: true, popular: false },
+      { id: 8, title: "Corporate Brochures", designs: 20, thumbnail: "/lovable-uploads/86e6884a-1ff0-4d6d-92ab-e4d003b932eb.png", comingSoon: true, popular: false },
+      { id: 9, title: "Event Flyers", designs: 35, thumbnail: "/lovable-uploads/676e6dfe-07cc-49ce-a25c-5319ba4a040d.png", comingSoon: true, popular: false },
     ]
   },
   {
     title: "Stickers & Labels",
     items: [
-      { id: 10, title: "Product Stickers", designs: 40, thumbnail: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=300&h=200&fit=crop", comingSoon: true, popular: false },
-      { id: 11, title: "Custom Labels", designs: 35, thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop", comingSoon: true, popular: false },
+      { id: 10, title: "Product Stickers", designs: 40, thumbnail: "/lovable-uploads/676e6dfe-07cc-49ce-a25c-5319ba4a040d.png", comingSoon: true, popular: false },
+      { id: 11, title: "Custom Labels", designs: 35, thumbnail: "/lovable-uploads/676e6dfe-07cc-49ce-a25c-5319ba4a040d.png", comingSoon: true, popular: false },
     ]
   },
   {
     title: "T-Shirt Designs",
     items: [
-      { id: 12, title: "Custom T-Shirts", designs: 32, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", comingSoon: true, popular: false },
-      { id: 13, title: "Corporate T-Shirts", designs: 20, thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop", comingSoon: true, popular: false },
+      { id: 12, title: "Custom T-Shirts", designs: 32, thumbnail: "/lovable-uploads/57a869a6-aadb-4d18-8b33-ef92ef3b632d.png", comingSoon: true, popular: false },
+      { id: 13, title: "Corporate T-Shirts", designs: 20, thumbnail: "/lovable-uploads/57a869a6-aadb-4d18-8b33-ef92ef3b632d.png", comingSoon: true, popular: false },
     ]
   }
 ];
