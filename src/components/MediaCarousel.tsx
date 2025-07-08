@@ -8,35 +8,41 @@ export const MediaCarousel = () => {
       type: "youtube",
       title: "Banner Printing Process",
       thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop",
-      icon: Youtube
+      icon: Youtube,
+      url: "https://youtube.com/shorts/h2istcrOTQc?feature=share"
     },
     {
-      type: "instagram", 
-      title: "Recent Print Jobs",
+      type: "youtube", 
+      title: "Digital Printing Demo",
       thumbnail: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
-      icon: Instagram
+      icon: Youtube,
+      url: "https://youtube.com/shorts/IhOXuJn22-o?feature=share"
     },
     {
       type: "youtube",
-      title: "Digital Printing Demo",
+      title: "Custom Print Solutions",
       thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
-      icon: Youtube
+      icon: Youtube,
+      url: "https://youtube.com/shorts/LJRIeNydPI0?feature=share"
     },
     {
-      type: "instagram",
-      title: "Customer Projects",
+      type: "youtube",
+      title: "Professional Printing",
       thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
-      icon: Instagram
+      icon: Youtube,
+      url: "https://youtube.com/shorts/KWqU4H_QV3I?feature=share"
+    },
+    {
+      type: "youtube",
+      title: "Quality Control Process",
+      thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop",
+      icon: Youtube,
+      url: "https://youtube.com/shorts/d5ijtpbCJNk?feature=share"
     }
   ];
 
-  const handleMediaClick = (type: string) => {
-    if (type === 'instagram') {
-      window.open('https://instagram.com/ROHILAGRAPHICSNAKUR', '_blank');
-    } else {
-      // For YouTube, you can add your channel URL here
-      window.open('https://youtube.com', '_blank');
-    }
+  const handleMediaClick = (url: string) => {
+    window.open(url, '_blank');
   };
 
   return (
@@ -47,7 +53,7 @@ export const MediaCarousel = () => {
             See Our Work in Action
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Watch our printing processes and check out our latest projects on social media
+            Watch our printing processes and check out our latest projects on YouTube
           </p>
         </div>
 
@@ -55,8 +61,8 @@ export const MediaCarousel = () => {
           {/* Floating circular carousel */}
           <div className="flex justify-center items-center min-h-[400px]">
             <div className="relative w-80 h-80 animate-spin" style={{ animationDuration: '20s' }}>
-              {mediaItems.map((item, index) => {
-                const angle = (index * 360) / mediaItems.length;
+              {mediaItems.slice(0, 4).map((item, index) => {
+                const angle = (index * 360) / 4;
                 const x = Math.cos((angle * Math.PI) / 180) * 140;
                 const y = Math.sin((angle * Math.PI) / 180) * 140;
                 
@@ -69,7 +75,7 @@ export const MediaCarousel = () => {
                       top: `calc(50% + ${y}px - 48px)`,
                       animation: `reverse-spin 20s linear infinite`
                     }}
-                    onClick={() => handleMediaClick(item.type)}
+                    onClick={() => handleMediaClick(item.url)}
                   >
                     <div className="w-full h-full rounded-lg overflow-hidden relative bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
                       <item.icon className="w-8 h-8 text-white group-hover:scale-125 transition-transform" />
@@ -94,11 +100,11 @@ export const MediaCarousel = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {mediaItems.map((item, index) => (
+          {mediaItems.slice(0, 4).map((item, index) => (
             <Card 
               key={index}
               className="bg-white/10 backdrop-blur-md border-white/20 overflow-hidden cursor-pointer hover:bg-white/20 transition-all duration-300 group"
-              onClick={() => handleMediaClick(item.type)}
+              onClick={() => handleMediaClick(item.url)}
             >
               <div className="aspect-video relative overflow-hidden">
                 <img 
@@ -112,7 +118,7 @@ export const MediaCarousel = () => {
               </div>
               <div className="p-4">
                 <h4 className="font-semibold text-white">{item.title}</h4>
-                <p className="text-sm text-gray-300 capitalize">{item.type} content</p>
+                <p className="text-sm text-gray-300">YouTube Shorts</p>
               </div>
             </Card>
           ))}

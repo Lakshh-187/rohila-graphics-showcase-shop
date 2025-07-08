@@ -10,37 +10,37 @@ export const VideoShowcase = () => {
       title: "Digital Printing Process",
       thumbnail: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=500&h=300&fit=crop",
       platform: "youtube",
-      duration: "2:45"
+      duration: "2:45",
+      url: "https://youtube.com/shorts/K2vBIF2qRIo?feature=share"
     },
     {
       id: 2,
       title: "Banner Installation",
       thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=300&fit=crop",
-      platform: "instagram",
-      duration: "1:30"
+      platform: "youtube",
+      duration: "1:30",
+      url: "https://youtube.com/shorts/8vX3aSbRlIs?feature=share"
     },
     {
       id: 3,
       title: "Business Card Design",
       thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
       platform: "youtube",
-      duration: "3:15"
+      duration: "3:15",
+      url: "https://youtube.com/shorts/fH4iiKpdqpM?feature=share"
     },
     {
       id: 4,
       title: "Wedding Print Setup",
       thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      platform: "instagram",
-      duration: "2:00"
+      platform: "youtube",
+      duration: "2:00",
+      url: "https://youtube.com/shorts/7csiNb6AV_E?feature=share"
     }
   ];
 
-  const handleVideoClick = (platform: string) => {
-    if (platform === 'instagram') {
-      window.open('https://instagram.com/ROHILAGRAPHICSNAKUR', '_blank');
-    } else {
-      window.open('https://youtube.com', '_blank');
-    }
+  const handleVideoClick = (url: string) => {
+    window.open(url, '_blank');
   };
 
   return (
@@ -60,7 +60,7 @@ export const VideoShowcase = () => {
             <Card 
               key={video.id}
               className="group cursor-pointer overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/10 backdrop-blur-md border-white/20"
-              onClick={() => handleVideoClick(video.platform)}
+              onClick={() => handleVideoClick(video.url)}
             >
               <div className="relative h-48 overflow-hidden">
                 <img 
@@ -83,11 +83,7 @@ export const VideoShowcase = () => {
 
                 {/* Platform Icon */}
                 <div className="absolute top-3 left-3">
-                  {video.platform === 'youtube' ? (
-                    <Youtube className="w-6 h-6 text-red-500" />
-                  ) : (
-                    <Instagram className="w-6 h-6 text-pink-500" />
-                  )}
+                  <Youtube className="w-6 h-6 text-red-500" />
                 </div>
               </div>
 
@@ -96,7 +92,7 @@ export const VideoShowcase = () => {
                   {video.title}
                 </h3>
                 <p className="text-sm text-gray-400 capitalize mt-1">
-                  {video.platform} video
+                  YouTube Shorts
                 </p>
               </div>
             </Card>
@@ -107,7 +103,7 @@ export const VideoShowcase = () => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-            onClick={() => window.open('https://instagram.com/ROHILAGRAPHICSNAKUR', '_blank')}
+            onClick={() => window.open('https://youtube.com/shorts/G0v5xRomti4?feature=share', '_blank')}
           >
             View More Videos
           </Button>
