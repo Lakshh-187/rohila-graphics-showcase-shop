@@ -8,7 +8,7 @@ export const VideoShowcase = () => {
     {
       id: 1,
       title: "Digital Printing Process",
-      thumbnail: "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=500&h=300&fit=crop",
+      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&h=300&fit=crop",
       platform: "youtube",
       duration: "2:45",
       url: "https://youtube.com/shorts/K2vBIF2qRIo?feature=share"
@@ -16,7 +16,7 @@ export const VideoShowcase = () => {
     {
       id: 2,
       title: "Banner Installation",
-      thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&h=300&fit=crop",
+      thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop",
       platform: "youtube",
       duration: "1:30",
       url: "https://youtube.com/shorts/8vX3aSbRlIs?feature=share"
@@ -24,7 +24,7 @@ export const VideoShowcase = () => {
     {
       id: 3,
       title: "Business Card Design",
-      thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
+      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop",
       platform: "youtube",
       duration: "3:15",
       url: "https://youtube.com/shorts/fH4iiKpdqpM?feature=share"
@@ -32,7 +32,7 @@ export const VideoShowcase = () => {
     {
       id: 4,
       title: "Wedding Print Setup",
-      thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      thumbnail: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&h=300&fit=crop",
       platform: "youtube",
       duration: "2:00",
       url: "https://youtube.com/shorts/7csiNb6AV_E?feature=share"

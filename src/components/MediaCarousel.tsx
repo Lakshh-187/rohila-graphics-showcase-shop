@@ -7,21 +7,21 @@ export const MediaCarousel = () => {
     {
       type: "youtube",
       title: "Banner Printing Process",
-      thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop",
+      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
       icon: Youtube,
       url: "https://youtube.com/shorts/h2istcrOTQc?feature=share"
     },
     {
       type: "youtube", 
       title: "Digital Printing Demo",
-      thumbnail: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
+      thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop",
       icon: Youtube,
       url: "https://youtube.com/shorts/IhOXuJn22-o?feature=share"
     },
     {
       type: "youtube",
       title: "Custom Print Solutions",
-      thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
+      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop",
       icon: Youtube,
       url: "https://youtube.com/shorts/LJRIeNydPI0?feature=share"
     },
@@ -35,7 +35,7 @@ export const MediaCarousel = () => {
     {
       type: "youtube",
       title: "Quality Control Process",
-      thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop",
+      thumbnail: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop",
       icon: Youtube,
       url: "https://youtube.com/shorts/d5ijtpbCJNk?feature=share"
     }
