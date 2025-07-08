@@ -4,7 +4,6 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { BusinessCarousel } from "./BusinessCarousel";
 
 const businessImages = [
   "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=800&h=600&fit=crop",
@@ -153,11 +152,6 @@ export const Hero = () => {
             className="w-full pl-8 sm:pl-10 pr-4 py-2 sm:py-3 text-sm sm:text-base rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white shadow-sm"
           />
         </div>
-      </div>
-
-      {/* Business Images Carousel */}
-      <div className="container mx-auto px-4">
-        <BusinessCarousel />
       </div>
 
       {/* Services Grid */}
