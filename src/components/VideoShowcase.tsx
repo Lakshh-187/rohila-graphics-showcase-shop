@@ -8,7 +8,6 @@ export const VideoShowcase = () => {
     {
       id: 1,
       title: "Digital Printing Process",
-      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&h=300&fit=crop",
       platform: "youtube",
       duration: "2:45",
       url: "https://youtube.com/shorts/K2vBIF2qRIo?feature=share"
@@ -16,7 +15,6 @@ export const VideoShowcase = () => {
     {
       id: 2,
       title: "Banner Installation",
-      thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop",
       platform: "youtube",
       duration: "1:30",
       url: "https://youtube.com/shorts/8vX3aSbRlIs?feature=share"
@@ -24,7 +22,6 @@ export const VideoShowcase = () => {
     {
       id: 3,
       title: "Business Card Design",
-      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop",
       platform: "youtube",
       duration: "3:15",
       url: "https://youtube.com/shorts/fH4iiKpdqpM?feature=share"
@@ -32,7 +29,6 @@ export const VideoShowcase = () => {
     {
       id: 4,
       title: "Wedding Print Setup",
-      thumbnail: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&h=300&fit=crop",
       platform: "youtube",
       duration: "2:00",
       url: "https://youtube.com/shorts/7csiNb6AV_E?feature=share"
@@ -64,7 +60,7 @@ export const VideoShowcase = () => {
             >
               <div className="relative h-48 overflow-hidden">
                 <img 
-                  src={video.thumbnail} 
+          
                   alt={video.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

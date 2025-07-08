@@ -7,35 +7,30 @@ export const MediaCarousel = () => {
     {
       type: "youtube",
       title: "Banner Printing Process",
-      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
       icon: Youtube,
       url: "https://youtube.com/shorts/h2istcrOTQc?feature=share"
     },
     {
       type: "youtube", 
       title: "Digital Printing Demo",
-      thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop",
       icon: Youtube,
       url: "https://youtube.com/shorts/IhOXuJn22-o?feature=share"
     },
     {
       type: "youtube",
       title: "Custom Print Solutions",
-      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop",
       icon: Youtube,
       url: "https://youtube.com/shorts/LJRIeNydPI0?feature=share"
     },
     {
       type: "youtube",
       title: "Professional Printing",
-      thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
       icon: Youtube,
       url: "https://youtube.com/shorts/KWqU4H_QV3I?feature=share"
     },
     {
       type: "youtube",
       title: "Quality Control Process",
-      thumbnail: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop",
       icon: Youtube,
       url: "https://youtube.com/shorts/d5ijtpbCJNk?feature=share"
     }
@@ -108,7 +103,7 @@ export const MediaCarousel = () => {
             >
               <div className="aspect-video relative overflow-hidden">
                 <img 
-                  src={item.thumbnail} 
+               
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
