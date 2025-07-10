@@ -14,8 +14,8 @@ export const FloatingSocials = () => {
 
   return (
     <>
-      {/* Left side - All social icons vertically */}
-      <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-40 space-y-3">
+      {/* All social icons in one vertical line - positioned better for mobile */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40 flex flex-col space-y-3">
         <Button
           size="icon"
           className="bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 w-12 h-12 rounded-full"

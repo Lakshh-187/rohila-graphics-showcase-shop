@@ -54,6 +54,36 @@ const allServices = [
     category: "Flex Printing"
   },
 
+  // Hoarding & Boards Section
+  {
+    title: "Glow Sign Board",
+    price: "₹150-300",
+    unit: "per sq ft",
+    description: "Illuminated signage with energy-efficient LED lighting",
+    negotiable: true,
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
+    category: "Hoarding & Boards",
+    popular: true
+  },
+  {
+    title: "Hoarding",
+    price: "₹25-65",
+    unit: "per sq ft",
+    description: "Large format outdoor advertising displays",
+    negotiable: true,
+    image: "/lovable-uploads/5a5f355b-2ed4-4e08-b901-227fa3135927.png",
+    category: "Hoarding & Boards"
+  },
+  {
+    title: "Boards",
+    price: "₹80-150",
+    unit: "per sq ft",
+    description: "Professional display boards for various applications",
+    negotiable: true,
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    category: "Hoarding & Boards"
+  },
+
   // Digital Printing Services
   {
     title: "High-Quality Vinyl Print",
@@ -378,6 +408,7 @@ export const ServicesGrid = () => {
 
   const discounts = {
     "Flex Printing": "Up to 30% Off",
+    "Hoarding & Boards": "From ₹25",
     "Digital Printing": "Min. 25% Off", 
     "Offset Printing": "From ₹499",
     "Signage (Coming Soon)": undefined,
