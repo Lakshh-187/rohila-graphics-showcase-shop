@@ -1,137 +1,112 @@
 
-import { Play, Instagram, Youtube } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Youtube, Play } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
+const mediaItems = [
+  {
+    type: "youtube",
+    title: "Banner Printing Process",
+    thumbnail: "/lovable-uploads/586aebe3-4320-41e2-ac62-9150f1049305.png",
+    icon: Youtube,
+    url: "https://youtube.com/shorts/h2istcrOTQc?feature=share"
+  },
+  {
+    type: "youtube", 
+    title: "Digital Printing Demo",
+    thumbnail: "/lovable-uploads/5a72f972-2581-4fa9-960a-3ac54e7d17a7.png",
+    icon: Youtube,
+    url: "https://youtube.com/shorts/IhOXuJn22-o?feature=share"
+  },
+  {
+    type: "youtube",
+    title: "Custom Print Solutions",
+    thumbnail: "/lovable-uploads/cc566479-1e40-44b6-846a-27a9827d8d35.png",
+    icon: Youtube,
+    url: "https://youtube.com/shorts/LJRIeNydPI0?feature=share"
+  },
+  {
+    type: "youtube",
+    title: "Professional Printing",
+    thumbnail: "/lovable-uploads/586aebe3-4320-41e2-ac62-9150f1049305.png",
+    icon: Youtube,
+    url: "https://youtube.com/shorts/KWqU4H_QV3I?feature=share"
+  },
+  {
+    type: "youtube",
+    title: "Quality Control Process",
+    thumbnail: "/lovable-uploads/5a72f972-2581-4fa9-960a-3ac54e7d17a7.png",
+    icon: Youtube,
+    url: "https://youtube.com/shorts/d5ijtpbCJNk?feature=share"
+  }
+];
 
 export const MediaCarousel = () => {
-  const mediaItems = [
-    {
-      type: "youtube",
-      title: "Banner Printing Process",
-      icon: Youtube,
-      url: "https://youtube.com/shorts/h2istcrOTQc?feature=share"
-    },
-    {
-      type: "youtube", 
-      title: "Digital Printing Demo",
-      icon: Youtube,
-      url: "https://youtube.com/shorts/IhOXuJn22-o?feature=share"
-    },
-    {
-      type: "youtube",
-      title: "Custom Print Solutions",
-      icon: Youtube,
-      url: "https://youtube.com/shorts/LJRIeNydPI0?feature=share"
-    },
-    {
-      type: "youtube",
-      title: "Professional Printing",
-      icon: Youtube,
-      url: "https://youtube.com/shorts/KWqU4H_QV3I?feature=share"
-    },
-    {
-      type: "youtube",
-      title: "Quality Control Process",
-      icon: Youtube,
-      url: "https://youtube.com/shorts/d5ijtpbCJNk?feature=share"
-    }
-  ];
-
-  const handleMediaClick = (url: string) => {
+  const handleItemClick = (url: string) => {
     window.open(url, '_blank');
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl font-bold text-white mb-6">
-            See Our Work in Action
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Watch our printing processes and check out our latest projects on YouTube
+          <h2 className="text-5xl font-bold text-gray-800 mb-6">Media Gallery</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore our collection of videos, tutorials, and behind-the-scenes content showcasing our printing expertise.
           </p>
         </div>
 
-        <div className="relative">
-          {/* Floating circular carousel */}
-          <div className="flex justify-center items-center min-h-[400px]">
-            <div className="relative w-80 h-80 animate-spin" style={{ animationDuration: '20s' }}>
-              {mediaItems.slice(0, 4).map((item, index) => {
-                const angle = (index * 360) / 4;
-                const x = Math.cos((angle * Math.PI) / 180) * 140;
-                const y = Math.sin((angle * Math.PI) / 180) * 140;
-                
-                return (
-                  <Card
-                    key={index}
-                    className="absolute w-24 h-24 cursor-pointer hover:scale-110 transition-all duration-300 group"
-                    style={{
-                      left: `calc(50% + ${x}px - 48px)`,
-                      top: `calc(50% + ${y}px - 48px)`,
-                      animation: `reverse-spin 20s linear infinite`
-                    }}
-                    onClick={() => handleMediaClick(item.url)}
+        <div className="max-w-5xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {mediaItems.map((item, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div 
+                    className="group cursor-pointer"
+                    onClick={() => handleItemClick(item.url)}
                   >
-                    <div className="w-full h-full rounded-lg overflow-hidden relative bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-                      <item.icon className="w-8 h-8 text-white group-hover:scale-125 transition-transform" />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                    <div className="relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                      <div className="aspect-video relative overflow-hidden">
+                        <img 
+                          src={item.thumbnail}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="bg-red-600 rounded-full p-3">
+                            <Play className="w-6 h-6 text-white fill-white" />
+                          </div>
+                        </div>
+
+                        <div className="absolute top-3 right-3">
+                          <item.icon className="w-6 h-6 text-red-500" />
+                        </div>
+                      </div>
+                      
+                      <div className="p-4">
+                        <h3 className="font-semibold text-gray-800 group-hover:text-purple-600 transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 mt-1 capitalize">
+                          {item.type} Video
+                        </p>
+                      </div>
                     </div>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Center content */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Card className="w-48 h-48 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 border-0 flex items-center justify-center">
-              <div className="text-center text-white">
-                <Play className="w-12 h-12 mx-auto mb-4 animate-pulse" />
-                <h3 className="text-lg font-bold">Media Gallery</h3>
-                <p className="text-sm opacity-90">Click to explore</p>
-              </div>
-            </Card>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {mediaItems.slice(0, 4).map((item, index) => (
-            <Card 
-              key={index}
-              className="bg-white/10 backdrop-blur-md border-white/20 overflow-hidden cursor-pointer hover:bg-white/20 transition-all duration-300 group"
-              onClick={() => handleMediaClick(item.url)}
-            >
-              <div className="aspect-video relative overflow-hidden">
-                <img 
-               
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <item.icon className="w-8 h-8 text-white" />
-                </div>
-              </div>
-              <div className="p-4">
-                <h4 className="font-semibold text-white">{item.title}</h4>
-                <p className="text-sm text-gray-300">YouTube Shorts</p>
-              </div>
-            </Card>
-          ))}
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </div>
-
-      <style>
-        {`
-          @keyframes reverse-spin {
-            from {
-              transform: rotate(0deg);
-            }
-            to {
-              transform: rotate(-360deg);
-            }
-          }
-        `}
-      </style>
     </section>
   );
 };

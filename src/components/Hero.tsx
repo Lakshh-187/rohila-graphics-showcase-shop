@@ -1,4 +1,3 @@
-
 import { Search, MapPin, Star, Phone, Mail } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,9 +5,9 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const businessImages = [
-  "https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
+  "/lovable-uploads/cc566479-1e40-44b6-846a-27a9827d8d35.png",
+  "/lovable-uploads/5a72f972-2581-4fa9-960a-3ac54e7d17a7.png",
+  "/lovable-uploads/586aebe3-4320-41e2-ac62-9150f1049305.png",
 ];
 
 export const Hero = () => {
@@ -118,19 +117,32 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Right Image */}
+            {/* Right Image Carousel */}
             <div className="relative">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img 
-                  src="/lovable-uploads/cc566479-1e40-44b6-846a-27a9827d8d35.png" 
-                  alt="Rohila Graphics Store Front"
-                  className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+                  src={businessImages[currentImage]} 
+                  alt="Rohila Graphics Store"
+                  className="w-full h-64 sm:h-80 lg:h-96 object-cover transition-opacity duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <h3 className="text-lg sm:text-xl font-bold mb-1">Rohila Graphics</h3>
                   <p className="text-sm sm:text-base opacity-90">Digital Printing & Large Format Solutions</p>
                 </div>
+              </div>
+              
+              {/* Carousel Indicators */}
+              <div className="flex justify-center mt-4 space-x-2">
+                {businessImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImage(index)}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      currentImage === index ? 'bg-purple-600' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
               </div>
               
               {/* Floating Badge */}

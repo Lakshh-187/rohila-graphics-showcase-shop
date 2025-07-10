@@ -12,6 +12,7 @@ import { ContactSection } from "@/components/ContactSection";
 import { FloatingSocials } from "@/components/FloatingSocials";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { Footer } from "@/components/Footer";
+import { SocialPopup } from "@/components/SocialPopup";
 
 const Index = () => {
   return (
@@ -29,6 +30,7 @@ const Index = () => {
       <FloatingSocials />
       <FloatingWhatsApp />
       <Footer />
+      <SocialPopup />
     </div>
   );
 };
