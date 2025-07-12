@@ -1,3 +1,4 @@
+
 import { ImageServiceCard } from "./ImageServiceCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,15 @@ import { useRef } from "react";
 
 const allServices = [
   // Flex Printing Services
+  {
+    title: "Black Star Banner (220 GSM)",
+    price: "₹15",
+    unit: "per sq ft",
+    description: "Premium quality banner with excellent color reproduction",
+    negotiable: true,
+    image: "https://i.ibb.co/jvskVdQD/image.png",
+    category: "Flex Printing"
+  },
   {
     title: "Standard Banner - FL",
     price: "₹10",
@@ -17,15 +27,6 @@ const allServices = [
     popular: true
   },
   {
-    title: "Hoarding ",
-    price: "₹12",
-    unit: "per sq ft", 
-    description: "Enhanced durability banner with superior weather resistance",
-    negotiable: true,
-    image: "/lovable-uploads/5a5f355b-2ed4-4e08-b901-227fa3135927.png",
-    category: "Flex Printing"
-  },
-  {
     title: "White Star Banner (220 GSM)",
     price: "₹15",
     unit: "per sq ft",
@@ -34,23 +35,40 @@ const allServices = [
     image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png",
     category: "Flex Printing"
   },
-  
   {
-    title: "Black Star Banner (220 GSM)",
+    title: "Glow Sign Board",
     price: "₹15",
     unit: "per sq ft",
-    description: "Premium quality banner with excellent color reproduction",
+    description: "Illuminated signage with energy-efficient LED lighting",
     negotiable: true,
-    image: "https://i.ibb.co/jvskVdQD/image.png",
+    image: "https://i.ibb.co/svfr6bn8/image.png",
     category: "Flex Printing"
   },
   {
-    title: "Sign Board ",
-    price: "₹15",
+    title: "Retro",
+    price: "₹18",
     unit: "per sq ft",
-    description: "Premium quality banner with excellent color reproduction",
+    description: "Vintage style banner with retro finish and texture",
     negotiable: true,
-    image: "https://i.ibb.co/svfr6bn8/image.png",
+    image: "https://i.ibb.co/0j4dzRtZ/image.png",
+    category: "Flex Printing"
+  },
+  {
+    title: "Black Light",
+    price: "₹20",
+    unit: "per sq ft",
+    description: "Special black light banner for unique lighting effects",
+    negotiable: true,
+    image: "/lovable-uploads/bbae2d16-0375-4e01-bc75-b2e2e73c8c5f.png",
+    category: "Flex Printing"
+  },
+  {
+    title: "White Star",
+    price: "₹16",
+    unit: "per sq ft",
+    description: "Premium white star banner with superior quality",
+    negotiable: true,
+    image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png",
     category: "Flex Printing"
   },
 
@@ -104,7 +122,6 @@ const allServices = [
     image: "/lovable-uploads/0bc6f65d-821c-4c64-b073-c44552268199.png",
     category: "Digital Printing"
   },
-
   {
     title: "Premium Retro Vinyl",
     price: "₹50",
@@ -123,7 +140,6 @@ const allServices = [
     image: "/lovable-uploads/bbae2d16-0375-4e01-bc75-b2e2e73c8c5f.png",
     category: "Digital Printing"
   },
- 
 
   // Wallpaper Solutions
   {
@@ -155,7 +171,7 @@ const allServices = [
   },
   {
     title: "Photo Wallpaper",
-    price: "₹25-35",
+    price: "₹22-30",
     unit: "per sq ft",
     description: "Custom photo wallpapers from your images",
     negotiable: true,

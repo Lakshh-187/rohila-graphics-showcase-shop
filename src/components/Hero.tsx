@@ -22,11 +22,11 @@ export const Hero = () => {
   }, []);
 
   const services = [
-    { title: "Flex Banner Printing", image: "/lovable-uploads/70522788-fd14-40e9-9758-c7707e074864.png", popular: true },
     { title: "Digital Printing", image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png", popular: false },
-    { title: "Offset Printing", image: "/lovable-uploads/a56a81f0-6086-492f-a98f-8bd1a69bf1f0.png", popular: true },
+    { title: "Flex Banner Printing", image: "/lovable-uploads/70522788-fd14-40e9-9758-c7707e074864.png", popular: true },
+    { title: "Offset Printing", image: "/lovable-uploads/a56a81f0-6086-492f-8bd1a69bf1f0.png", popular: true },
     { title: "Digital Paper Printing", image: "/lovable-uploads/6124f148-3aa0-4758-b1c9-eee61ed37f56.png", popular: false },
-    { title: "T-shirt Printing", image: "/lovable-uploads/57a869a6-aadb-4d18-8b33-ef92ef3b632d.png", popular: false },
+    { title: "T-shirt Printing", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop", popular: false },
   ];
 
   const handleWhatsApp = () => {
