@@ -79,7 +79,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Illuminated signage with energy-efficient LED lighting",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/db2c3343-9e25-4c87-a60d-60a7d1b67c81.png",
     category: "Hoarding & Boards",
     popular: true
   },
