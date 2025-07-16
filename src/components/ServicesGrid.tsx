@@ -89,7 +89,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Large format outdoor advertising displays",
     negotiable: true,
-    image: "/lovable-uploads/aee50704-c33e-4f23-afa3-0082be7831f4.png",
+    image: "/lovable-uploads/5a5f355b-2ed4-4e08-b901-227fa3135927.png",
     category: "Hoarding & Boards"
   },
   {
