@@ -41,7 +41,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Illuminated signage with energy-efficient LED lighting",
     negotiable: true,
-    image: "https://i.ibb.co/svfr6bn8/image.png",
+    image: "/lovable-uploads/9803723b-3c56-4b6c-a906-5bf25929b1a3.png",
     category: "Flex Printing"
   },
   {
@@ -98,7 +98,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Professional display boards for various applications",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/0a99c6dd-a0bd-42e6-92d7-7153679e3585.png",
     category: "Hoarding & Boards"
   },
 
