@@ -305,7 +305,7 @@ const allServices = [
     unit: "per invitation",
     description: "Elegant wedding invitations with custom designs",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/330105c5-0ca4-44d2-9a87-b5aa60d1f7c0.png",
     category: "Digital Paper Printing",
     popular: true
   },
@@ -327,7 +327,7 @@ const allServices = [
     unit: "per piece",
     description: "Professional uniforms with company branding",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1556821840-3a9c6dcb0e66?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/3106b826-ca01-4608-b843-e2d547437bed.png",
     category: "Apparel Printing"
   },
   {
