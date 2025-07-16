@@ -8,8 +8,18 @@ import { useRef } from "react";
 const allServices = [
   // Flex Printing Services
   {
-    title: "Black Star Banner (220 GSM)",
-    price: "₹15",
+    title: "Standard Banner - FL",
+    price: "₹10",
+    unit: "per sq ft",
+    description: "High-quality vinyl banners perfect for outdoor advertising and events",
+    negotiable: true,
+    image: "https://i.ibb.co/jvskVdQD/image.png",
+    category: "Flex Printing",
+    popular: true
+  },
+  {
+    title: "Black Star Banner (410 GSM)",
+    price: "₹35",
     unit: "per sq ft",
     description: "Premium quality banner with excellent color reproduction",
     negotiable: true,
@@ -17,40 +27,12 @@ const allServices = [
     category: "Flex Printing"
   },
   {
-    title: "Standard Banner - FL",
-    price: "₹10",
-    unit: "per sq ft",
-    description: "High-quality vinyl banners perfect for outdoor advertising and events",
-    negotiable: true,
-    image: "/lovable-uploads/70522788-fd14-40e9-9758-c7707e074864.png",
-    category: "Flex Printing",
-    popular: true
-  },
-  {
-    title: "White Star Banner (220 GSM)",
-    price: "₹15",
+    title: "White Star Banner (310 GSM)",
+    price: "₹25",
     unit: "per sq ft",
     description: "Premium quality banner with excellent color reproduction",
     negotiable: true,
     image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png",
-    category: "Flex Printing"
-  },
-  {
-    title: "Glow Sign Board",
-    price: "₹15",
-    unit: "per sq ft",
-    description: "Illuminated signage with energy-efficient LED lighting",
-    negotiable: true,
-    image: "/lovable-uploads/9803723b-3c56-4b6c-a906-5bf25929b1a3.png",
-    category: "Flex Printing"
-  },
-  {
-    title: "Retro",
-    price: "₹18",
-    unit: "per sq ft",
-    description: "Vintage style banner with retro finish and texture",
-    negotiable: true,
-    image: "https://i.ibb.co/0j4dzRtZ/image.png",
     category: "Flex Printing"
   },
   {
@@ -71,17 +53,25 @@ const allServices = [
     image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png",
     category: "Flex Printing"
   },
+  {
+    title: "Retro Banner",
+    price: "₹45",
+    unit: "per sq ft",
+    description: "Vintage style banner with retro finish and texture",
+    negotiable: true,
+    image: "/lovable-uploads/70522788-fd14-40e9-9758-c7707e074864.png",
+    category: "Flex Printing"
+  },
 
   // Hoarding & Boards Section
   {
     title: "Glow Sign Board",
-    price: "₹150-300",
+    price: "₹15",
     unit: "per sq ft",
     description: "Illuminated signage with energy-efficient LED lighting",
     negotiable: true,
-    image: "/lovable-uploads/db2c3343-9e25-4c87-a60d-60a7d1b67c81.png",
-    category: "Hoarding & Boards",
-    popular: true
+    image: "/lovable-uploads/9803723b-3c56-4b6c-a906-5bf25929b1a3.png",
+    category: "Flex Printing"
   },
   {
     title: "Hoarding",
@@ -109,7 +99,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Durable vinyl prints for vehicle wraps and outdoor signage",
     negotiable: true,
-    image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png",
+    image: "/lovable-uploads/bbae2d16-0375-4e01-bc75-b2e2e73c8c5f.png",
     category: "Digital Printing",
     popular: true
   },
@@ -132,12 +122,12 @@ const allServices = [
     category: "Digital Printing"
   },
   {
-    title: "VINYL",
-    price: "₹55",
+    title: "Transparent Vinyl Printing",
+    price: "₹35",
     unit: "per sq ft",
     description: "Artistic canvas prints for interior decoration",
     negotiable: true,
-    image: "/lovable-uploads/bbae2d16-0375-4e01-bc75-b2e2e73c8c5f.png",
+    image: "https://i.ibb.co/YTDY8DTR/image.png",
     category: "Digital Printing"
   },
 
@@ -157,7 +147,7 @@ const allServices = [
     unit: "per sq ft",
     description: "Specialized ceiling applications with expert fitting",
     negotiable: true,
-    image: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=400&h=300&fit=crop",
+    image: "https://i.ibb.co/xtmDH9LP/image.png",
     category: "Wallpaper"
   },
   {
