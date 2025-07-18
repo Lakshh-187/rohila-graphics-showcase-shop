@@ -8,7 +8,7 @@ import { useRef } from "react";
 const allServices = [
   // Flex Printing Services
   {
-    title: "Standard Banner - FL",
+    title: "Standard Banner FL",
     price: "₹10",
     unit: "per sq ft",
     description: "High-quality vinyl banners perfect for outdoor advertising and events",
@@ -18,8 +18,8 @@ const allServices = [
     popular: true
   },
   {
-    title: "Black Star Banner (410 GSM)",
-    price: "₹35",
+    title: "Black Star (260 GSM)",
+    price: "₹12",
     unit: "per sq ft",
     description: "Premium quality banner with excellent color reproduction",
     negotiable: true,
@@ -27,8 +27,8 @@ const allServices = [
     category: "Flex Printing"
   },
   {
-    title: "White Star Banner (310 GSM)",
-    price: "₹25",
+    title: "White Star (220 GSM)",
+    price: "₹15",
     unit: "per sq ft",
     description: "Premium quality banner with excellent color reproduction",
     negotiable: true,
@@ -36,25 +36,25 @@ const allServices = [
     category: "Flex Printing"
   },
   {
-    title: "Black Light",
-    price: "₹20",
+    title: "White Star Thick (310 GSM)",
+    price: "₹25",
     unit: "per sq ft",
-    description: "Special black light banner for unique lighting effects",
-    negotiable: true,
-    image: "/lovable-uploads/bbae2d16-0375-4e01-bc75-b2e2e73c8c5f.png",
-    category: "Flex Printing"
-  },
-  {
-    title: "White Star",
-    price: "₹16",
-    unit: "per sq ft",
-    description: "Premium white star banner with superior quality",
+    description: "Thick premium white star banner with superior quality",
     negotiable: true,
     image: "/lovable-uploads/5e287451-aa72-4d7b-b71e-b6882a28e36a.png",
     category: "Flex Printing"
   },
   {
-    title: "Retro Banner",
+    title: "Backlight Banner (410 GSM)",
+    price: "₹35",
+    unit: "per sq ft",
+    description: "Special backlight banner for illuminated displays",
+    negotiable: true,
+    image: "/lovable-uploads/bbae2d16-0375-4e01-bc75-b2e2e73c8c5f.png",
+    category: "Flex Printing"
+  },
+  {
+    title: "Retro Banner (400 GSM)",
     price: "₹45",
     unit: "per sq ft",
     description: "Vintage style banner with retro finish and texture",
@@ -65,16 +65,7 @@ const allServices = [
 
   // Hoarding & Boards Section
   {
-    title: "Glow Sign Board",
-    price: "₹15",
-    unit: "per sq ft",
-    description: "Illuminated signage with energy-efficient LED lighting",
-    negotiable: true,
-    image: "/lovable-uploads/9803723b-3c56-4b6c-a906-5bf25929b1a3.png",
-    category: "Flex Printing"
-  },
-  {
-    title: "Hoarding",
+    title: "Hardcopy",
     price: "₹25-65",
     unit: "per sq ft",
     description: "Large format outdoor advertising displays",
@@ -83,13 +74,23 @@ const allServices = [
     category: "Hoarding & Boards"
   },
   {
-    title: "Boards",
+    title: "Board/Standee",
     price: "₹80-150",
     unit: "per sq ft",
-    description: "Professional display boards for various applications",
+    description: "Professional display boards and standees for various applications",
     negotiable: true,
     image: "/lovable-uploads/0a99c6dd-a0bd-42e6-92d7-7153679e3585.png",
     category: "Hoarding & Boards"
+  },
+  {
+    title: "Glass Sign Board",
+    price: "₹150-300",
+    unit: "per sq ft",
+    description: "Illuminated glass signage with energy-efficient LED lighting",
+    negotiable: true,
+    image: "/lovable-uploads/9803723b-3c56-4b6c-a906-5bf25929b1a3.png",
+    category: "Hoarding & Boards",
+    popular: true
   },
 
   // Digital Printing Services
