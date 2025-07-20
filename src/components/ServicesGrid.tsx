@@ -65,7 +65,7 @@ const allServices = [
 
   // Hoarding & Boards Section
   {
-    title: "Hardcopy",
+    title: "Hoarding",
     price: "₹25-65",
     unit: "per sq ft",
     description: "Large format outdoor advertising displays",
